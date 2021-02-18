@@ -1,2 +1,2 @@
-# investment-checker-2
-Investment Checker 2 lets you track your long-term investments and gives you basic insights into how your stocks are doing.
+# Investment Checker 2
+Link to the previous version of Investment Checker (written in Python): [https://github.com/itsmeeandrew/InvestmentChecker](Investment Checker)
