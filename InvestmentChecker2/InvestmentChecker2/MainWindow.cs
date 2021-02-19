@@ -18,14 +18,11 @@ namespace InvestmentChecker2
         // Constants
         int STOCK_ROW_HEIGHT = 45;
         int STOCK_ROW_LEFT_MARGIN = 5;
-        string STOCKS_FOLDER_PATH = "./stocks";
-
+        
         // Python
         string pyfile = "./scripts/script.py";
         string pyexe = @"C:\Users\Andrew\AppData\Local\Programs\Python\Python38-32\python.exe";
-
-        // App data
-        string[] profileNames;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -33,37 +30,13 @@ namespace InvestmentChecker2
 
         private void MainWindowLoad(object sender, EventArgs e)
         {
-            // Get profiles from 'stocks' folder
-            DirectoryInfo di = new DirectoryInfo(STOCKS_FOLDER_PATH);
-            var res = di.EnumerateDirectories("*").ToArray();
-            profileNames = new string[res.Length];
-            for (int i = 0; i < res.Length; i++)
-            {
-                profileNames[i] = res[i].Name;
-            }
-
-            //Close();
+            App.LoadProfileNames();
+            
         }
-
-        /*
-        private void RunScript(string cmd, string args)
+        public void setComboDataSource()
         {
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = cmd;
-            start.Arguments = args;
-            start.UseShellExecute = false;
-            start.RedirectStandardOutput = true;
-            using (Process process = Process.Start(start))
-            {
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    string result = reader.ReadToEnd();
-                    Console.Write(result);
-                }
-            }
+            comboBoxSelectProfile.DataSource = App.profileNames;
         }
-        */
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 

@@ -68,11 +68,13 @@ namespace InvestmentChecker2
             // comboBoxSelectProfile
             // 
             this.comboBoxSelectProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.comboBoxSelectProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxSelectProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxSelectProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.comboBoxSelectProfile.FormattingEnabled = true;
-            this.comboBoxSelectProfile.Location = new System.Drawing.Point(57, 24);
+            this.comboBoxSelectProfile.Location = new System.Drawing.Point(24, 27);
+            this.comboBoxSelectProfile.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxSelectProfile.Name = "comboBoxSelectProfile";
-            this.comboBoxSelectProfile.Size = new System.Drawing.Size(153, 45);
+            this.comboBoxSelectProfile.Size = new System.Drawing.Size(183, 39);
             this.comboBoxSelectProfile.TabIndex = 1;
             // 
             // btnAddStock

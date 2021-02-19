@@ -59,6 +59,13 @@
     <Compile Include="AddStockWindow.Designer.cs">
       <DependentUpon>AddStockWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ErrorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorWindow.Designer.cs">
+      <DependentUpon>ErrorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App.cs" />
     <Compile Include="SearchStockWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStockWindow.resx">
       <DependentUpon>AddStockWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorWindow.resx">
+      <DependentUpon>ErrorWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchStockWindow.resx">
       <DependentUpon>SearchStockWindow.cs</DependentUpon>

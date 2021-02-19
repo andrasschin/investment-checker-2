@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,28 @@ namespace InvestmentChecker2
         }
         private void AddNewProfile(object sender, EventArgs e)
         {
+            string profileName = textInputProfileName.Text;
+            string newProfilePath = App.PROFILES_FOLDER_PATH + profileName;
+            if (!Directory.Exists(newProfilePath))
+            {
+                Directory.CreateDirectory(newProfilePath);
+                Directory.CreateDirectory(newProfilePath + "/stocks");
+                Directory.CreateDirectory(newProfilePath + "/history");
+                File.Create(newProfilePath + "/stocks/stocks.csv");
 
+                App.LoadProfileNames();
+                
+            } else
+            {
+                ErrorWindow window = new ErrorWindow("Profile already exists. Please choose a different name.");
+                window.Show();
+            }
+
+            Close();
         }
         private void CloseWindow(object sender, EventArgs e)
         {
             Close();
         }
-
-        
     }
 }
