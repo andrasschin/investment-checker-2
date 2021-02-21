@@ -76,6 +76,7 @@ namespace InvestmentChecker2
             this.comboBoxSelectProfile.Name = "comboBoxSelectProfile";
             this.comboBoxSelectProfile.Size = new System.Drawing.Size(183, 39);
             this.comboBoxSelectProfile.TabIndex = 1;
+            this.comboBoxSelectProfile.SelectedValueChanged += new System.EventHandler(this.onProfileChange);
             // 
             // btnAddStock
             // 
@@ -115,6 +116,7 @@ namespace InvestmentChecker2
             // 
             this.panelStocks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelStocks.AutoScroll = true;
             this.panelStocks.Location = new System.Drawing.Point(24, 174);
             this.panelStocks.Name = "panelStocks";
             this.panelStocks.Size = new System.Drawing.Size(1724, 348);

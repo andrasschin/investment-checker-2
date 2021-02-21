@@ -71,6 +71,7 @@ namespace InvestmentChecker2
             this.Controls.Add(this.labelErrorMessage);
             this.Name = "ErrorWindow";
             this.Text = "Error";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }

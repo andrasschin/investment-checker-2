@@ -18,7 +18,10 @@ namespace InvestmentChecker2
         // Constants
         int STOCK_ROW_HEIGHT = 45;
         int STOCK_ROW_LEFT_MARGIN = 5;
-        
+
+        // StockRow controls
+        List<StockRow> stockRows = new List<StockRow>();
+
         // Python
         string pyfile = "./scripts/script.py";
         string pyexe = @"C:\Users\Andrew\AppData\Local\Programs\Python\Python38-32\python.exe";
@@ -26,20 +29,39 @@ namespace InvestmentChecker2
         public MainWindow()
         {
             InitializeComponent();
+            App.LoadProfileNames();
+            comboBoxSelectProfile.DataSource = App.profileNames;
         }
 
         private void MainWindowLoad(object sender, EventArgs e)
         {
-            App.LoadProfileNames();
-            
+            DisplayCurrentStocks();
         }
-        public void setComboDataSource()
+        private void DisplayCurrentStocks()
         {
-            comboBoxSelectProfile.DataSource = App.profileNames;
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            // Clear out previously displayed stocks
+            foreach (StockRow stockRow in stockRows)
+            {
+                panelStocks.Controls.Remove(stockRow);
+            }
 
+            // Display new stocks
+            for (int i = 0; i < App.currentStocks.Count; i++)
+            {
+                Stock s = App.currentStocks[i];
+                StockRow stockRow = new StockRow(s.ticker, s.name, s.quantity, s.buyingPrice, s.dateBought);
+                stockRow.Top = i * STOCK_ROW_HEIGHT;
+                stockRow.Left = STOCK_ROW_LEFT_MARGIN;
+
+                stockRows.Add(stockRow);
+                panelStocks.Controls.Add(stockRow);
+            }
+        }
+        private void onProfileChange(object sender, EventArgs e)
+        {
+            string currentProfile = comboBoxSelectProfile.SelectedValue.ToString();
+            App.ReadStocksFromProfile(currentProfile);
+            DisplayCurrentStocks();
         }
 
         // Open new windows

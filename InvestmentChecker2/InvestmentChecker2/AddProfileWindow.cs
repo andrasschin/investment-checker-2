@@ -27,13 +27,13 @@ namespace InvestmentChecker2
                 Directory.CreateDirectory(newProfilePath + "/stocks");
                 Directory.CreateDirectory(newProfilePath + "/history");
                 File.Create(newProfilePath + "/stocks/stocks.csv");
-
-                App.LoadProfileNames();
+                
+                // Add to existing profiles
+                App.profileNames.Add(profileName);
                 
             } else
             {
-                ErrorWindow window = new ErrorWindow("Profile already exists. Please choose a different name.");
-                window.Show();
+                App.ShowError("Profile already exists. Please choose a different name.");
             }
 
             Close();
