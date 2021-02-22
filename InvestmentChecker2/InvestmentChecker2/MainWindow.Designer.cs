@@ -93,7 +93,7 @@ namespace InvestmentChecker2
             this.btnAddStock.TabIndex = 2;
             this.btnAddStock.Text = "Add Stock";
             this.btnAddStock.UseVisualStyleBackColor = false;
-            this.btnAddStock.Click += new System.EventHandler(this.openSearchStockWindow);
+            this.btnAddStock.Click += new System.EventHandler(this.OpenSearchStockWindow);
             // 
             // btnSettings
             // 

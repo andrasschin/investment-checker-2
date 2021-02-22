@@ -12,7 +12,8 @@ namespace InvestmentChecker2
 {
     public partial class StockRow : UserControl
     {
-        public StockRow(string ticker, string name, int quantity, double buyingPrice, DateTime dateBought)
+        int id;
+        public StockRow(int id, string ticker, string name, int quantity, double buyingPrice, DateTime dateBought)
         {
             InitializeComponent();
             labelTicker.Text = ticker;
@@ -20,6 +21,27 @@ namespace InvestmentChecker2
             labelQuantity.Text = quantity.ToString();
             labelBuyingPrice.Text = buyingPrice.ToString();
             labelDateBought.Text = dateBought.ToShortDateString().ToString();
+
+            this.id = id;
+        }
+
+        private void RemoveStock(object sender, EventArgs e)
+        {
+            // Delete from the stock's list
+            // Find the index based on the stock's id
+            int foundIndex = 0;
+            while (id != App.currentStocks[foundIndex].id)
+            {
+                foundIndex++;
+            }
+            App.currentStocks.RemoveAt(foundIndex);
+
+            // Remove the control
+            Parent.Controls.Remove(this);
+
+            // Schedule for deletion in stocks.csv
+            App.stocksToBeDeleted.Add(id);
+
         }
     }
 }

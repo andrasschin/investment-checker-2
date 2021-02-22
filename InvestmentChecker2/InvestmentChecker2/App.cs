@@ -16,9 +16,9 @@ namespace InvestmentChecker2
         
         // Folder paths
         public static string PROFILES_FOLDER_PATH = "./profiles/";
-        public static string getStocksFolderPath(string profileName)
+        public static string GetStocksFolderPath()
         {
-            return $"./profiles/{profileName}/stocks";
+            return $"./profiles/{currentProfile}/stocks";
         }
 
         // Files
@@ -29,9 +29,11 @@ namespace InvestmentChecker2
 
         // Profiles
         public static BindingList<string> profileNames = new BindingList<string>();
+        public static string currentProfile;
 
         // Stocks
         public static List<Stock> currentStocks = new List<Stock>();
+        public static List<int> stocksToBeDeleted = new List<int>();
 
         // FUNCTIONS
 
@@ -56,12 +58,12 @@ namespace InvestmentChecker2
         }
 
         // Read stocks from the selected profiles' stocks.csv file
-        public static void ReadStocksFromProfile(string profileName)
+        public static void ReadStocksFromProfile()
         {
             currentStocks.Clear();
             try
             {
-                using (StreamReader sr = new StreamReader($"{getStocksFolderPath(profileName)}/stocks.csv"))
+                using (StreamReader sr = new StreamReader($"{GetStocksFolderPath()}/stocks.csv"))
                 {
                     while (!sr.EndOfStream)
                     {
@@ -72,17 +74,18 @@ namespace InvestmentChecker2
                             3 - Quantity - Integer
                             4 - Date bought - DateTime
                         */
-                        // Errors are not handled very well for now.
+                        // TODO: Better error handling
                         try
                         {
                             string[] stockInformation = sr.ReadLine().Split(CSV_DELIMITER);
-                            string ticker = stockInformation[0];
-                            string name = stockInformation[1];
-                            int quantity = int.Parse(stockInformation[2]);
-                            double buyingPrice = double.Parse(stockInformation[3]);
-                            DateTime dateBought = DateTime.Parse(stockInformation[4]);
+                            int id = int.Parse(stockInformation[0]);
+                            string ticker = stockInformation[1];
+                            string name = stockInformation[2];
+                            int quantity = int.Parse(stockInformation[3]);
+                            double buyingPrice = double.Parse(stockInformation[4]);
+                            DateTime dateBought = DateTime.Parse(stockInformation[5]);
 
-                            Stock stock = new Stock(ticker, name, buyingPrice, quantity, dateBought);
+                            Stock stock = new Stock(id, ticker, name, buyingPrice, quantity, dateBought);
                             currentStocks.Add(stock);
                         }
                         catch (Exception ex)
@@ -97,6 +100,30 @@ namespace InvestmentChecker2
                 //ShowError("The stocks file wasn't found for the selected profile.");
                 ShowError(ex.Message);
             }
+        }
+
+        // Rewrites the current profile's stocks.csv, exluding the stocks which were scheduled for deletion
+        public static void UpdateStocksCSV()
+        {
+            using (StreamWriter sr = new StreamWriter($"{GetStocksFolderPath()}/stocks.csv"))
+            {
+                foreach (Stock stock in currentStocks)
+                {
+                    sr.WriteLine(CreateCSVLine(stock.GetOutputArray()));
+                }
+            }
+        }
+
+        static string CreateCSVLine(string[] arr)
+        {
+            string line = "";
+            foreach (string item in arr)
+            {
+                line += $"{item}{CSV_DELIMITER}";
+            }
+            line.Remove(line.Length - 1); // Remove extra delimiter
+
+            return line;
         }
 
         // Shows the error window with an error message as parameter

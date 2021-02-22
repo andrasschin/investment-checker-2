@@ -30,26 +30,29 @@ namespace InvestmentChecker2
         {
             InitializeComponent();
             App.LoadProfileNames();
-            comboBoxSelectProfile.DataSource = App.profileNames;
+            comboBoxSelectProfile.DataSource = App.profileNames;  
         }
 
         private void MainWindowLoad(object sender, EventArgs e)
         {
             DisplayCurrentStocks();
         }
+
         private void DisplayCurrentStocks()
         {
             // Clear out previously displayed stocks
+            // Alternatively I could use 'panelStocks.Controls.Clear();', but I'd need the stockRow list anyways
             foreach (StockRow stockRow in stockRows)
             {
                 panelStocks.Controls.Remove(stockRow);
             }
+            
 
             // Display new stocks
             for (int i = 0; i < App.currentStocks.Count; i++)
             {
                 Stock s = App.currentStocks[i];
-                StockRow stockRow = new StockRow(s.ticker, s.name, s.quantity, s.buyingPrice, s.dateBought);
+                StockRow stockRow = new StockRow(s.id, s.ticker, s.name, s.quantity, s.buyingPrice, s.dateBought);
                 stockRow.Top = i * STOCK_ROW_HEIGHT;
                 stockRow.Left = STOCK_ROW_LEFT_MARGIN;
 
@@ -57,10 +60,16 @@ namespace InvestmentChecker2
                 panelStocks.Controls.Add(stockRow);
             }
         }
+
         private void onProfileChange(object sender, EventArgs e)
         {
-            string currentProfile = comboBoxSelectProfile.SelectedValue.ToString();
-            App.ReadStocksFromProfile(currentProfile);
+            if (App.currentProfile != null && App.stocksToBeDeleted.Count() != 0)
+            {
+                App.UpdateStocksCSV();
+            }
+
+            App.currentProfile = comboBoxSelectProfile.SelectedValue.ToString();
+            App.ReadStocksFromProfile();
             DisplayCurrentStocks();
         }
 
@@ -71,7 +80,7 @@ namespace InvestmentChecker2
             window.Show();
         }
 
-        private void openSearchStockWindow(object sender, EventArgs e)
+        private void OpenSearchStockWindow(object sender, EventArgs e)
         {
             SearchStockWindow window = new SearchStockWindow();
             window.Show();
