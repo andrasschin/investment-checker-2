@@ -40,7 +40,7 @@ namespace InvestmentChecker2
             Parent.Controls.Remove(this);
 
             // Schedule for deletion in stocks.csv
-            App.stocksToBeDeleted.Add(id);
+            App.stocksToBeDeleted = true;
 
         }
     }

@@ -338,6 +338,7 @@ namespace InvestmentChecker2
             this.Controls.Add(this.btnAddProfile);
             this.Name = "MainWindow";
             this.Text = "Investment Checker 2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindowClose);
             this.Load += new System.EventHandler(this.MainWindowLoad);
             this.panelColumnns.ResumeLayout(false);
             this.ResumeLayout(false);

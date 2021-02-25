@@ -16,15 +16,11 @@ namespace InvestmentChecker2
     public partial class MainWindow : Form
     {
         // Constants
-        int STOCK_ROW_HEIGHT = 45;
+        int STOCK_ROW_HEIGHT = 65;
         int STOCK_ROW_LEFT_MARGIN = 5;
 
         // StockRow controls
         List<StockRow> stockRows = new List<StockRow>();
-
-        // Python
-        string pyfile = "./scripts/script.py";
-        string pyexe = @"C:\Users\Andrew\AppData\Local\Programs\Python\Python38-32\python.exe";
         
         public MainWindow()
         {
@@ -58,12 +54,17 @@ namespace InvestmentChecker2
 
                 stockRows.Add(stockRow);
                 panelStocks.Controls.Add(stockRow);
+
+                // Set next stock's id
+                // There might be a better solution to set this
+                App.NEXT_STOCK_ID = s.id;
             }
+            App.NEXT_STOCK_ID++;
         }
 
         private void onProfileChange(object sender, EventArgs e)
         {
-            if (App.currentProfile != null && App.stocksToBeDeleted.Count() != 0)
+            if (App.currentProfile != null && App.stocksToBeDeleted)
             {
                 App.UpdateStocksCSV();
             }
@@ -90,6 +91,15 @@ namespace InvestmentChecker2
         {
             SettingsWindow window = new SettingsWindow();
             window.Show();
+        }
+
+        // Occurs when the form is being closed
+        private void MainWindowClose(object sender, FormClosingEventArgs e)
+        {
+            if (App.stocksToBeDeleted)
+            {
+                App.UpdateStocksCSV();
+            }
         }
     }
 }

@@ -30,12 +30,17 @@ namespace InvestmentChecker2
         private void InitializeComponent()
         {
             this.labelSearchTicker = new System.Windows.Forms.Label();
-            this.textInputProfileName = new System.Windows.Forms.TextBox();
+            this.textInputTicker = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.labelTicker = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelCurrentPrice = new System.Windows.Forms.Label();
+            this.btnOpenAddStockWindow = new System.Windows.Forms.Button();
+            this.labelCurrency = new System.Windows.Forms.Label();
             this.labelFoundTicker = new System.Windows.Forms.Label();
             this.labelFoundName = new System.Windows.Forms.Label();
             this.labelFoundCurrentPrice = new System.Windows.Forms.Label();
-            this.btnOpenAddStockWindow = new System.Windows.Forms.Button();
+            this.labelFoundCurrency = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelSearchTicker
@@ -49,14 +54,14 @@ namespace InvestmentChecker2
             this.labelSearchTicker.TabIndex = 1;
             this.labelSearchTicker.Text = "Ticker:";
             // 
-            // textInputProfileName
+            // textInputTicker
             // 
-            this.textInputProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textInputProfileName.ForeColor = System.Drawing.Color.Black;
-            this.textInputProfileName.Location = new System.Drawing.Point(138, 22);
-            this.textInputProfileName.Name = "textInputProfileName";
-            this.textInputProfileName.Size = new System.Drawing.Size(223, 32);
-            this.textInputProfileName.TabIndex = 2;
+            this.textInputTicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textInputTicker.ForeColor = System.Drawing.Color.Black;
+            this.textInputTicker.Location = new System.Drawing.Point(138, 22);
+            this.textInputTicker.Name = "textInputTicker";
+            this.textInputTicker.Size = new System.Drawing.Size(223, 32);
+            this.textInputTicker.TabIndex = 2;
             // 
             // btnSearch
             // 
@@ -73,39 +78,40 @@ namespace InvestmentChecker2
             this.btnSearch.TabIndex = 11;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.SearchStock);
             // 
-            // labelFoundTicker
+            // labelTicker
             // 
-            this.labelFoundTicker.AutoSize = true;
-            this.labelFoundTicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFoundTicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelFoundTicker.Location = new System.Drawing.Point(147, 93);
-            this.labelFoundTicker.Name = "labelFoundTicker";
-            this.labelFoundTicker.Size = new System.Drawing.Size(97, 31);
-            this.labelFoundTicker.TabIndex = 12;
-            this.labelFoundTicker.Text = "Ticker:";
+            this.labelTicker.AutoSize = true;
+            this.labelTicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelTicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelTicker.Location = new System.Drawing.Point(124, 93);
+            this.labelTicker.Name = "labelTicker";
+            this.labelTicker.Size = new System.Drawing.Size(97, 31);
+            this.labelTicker.TabIndex = 12;
+            this.labelTicker.Text = "Ticker:";
             // 
-            // labelFoundName
+            // labelName
             // 
-            this.labelFoundName.AutoSize = true;
-            this.labelFoundName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFoundName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelFoundName.Location = new System.Drawing.Point(147, 141);
-            this.labelFoundName.Name = "labelFoundName";
-            this.labelFoundName.Size = new System.Drawing.Size(94, 31);
-            this.labelFoundName.TabIndex = 13;
-            this.labelFoundName.Text = "Name:";
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelName.Location = new System.Drawing.Point(124, 140);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(94, 31);
+            this.labelName.TabIndex = 13;
+            this.labelName.Text = "Name:";
             // 
-            // labelFoundCurrentPrice
+            // labelCurrentPrice
             // 
-            this.labelFoundCurrentPrice.AutoSize = true;
-            this.labelFoundCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFoundCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelFoundCurrentPrice.Location = new System.Drawing.Point(59, 189);
-            this.labelFoundCurrentPrice.Name = "labelFoundCurrentPrice";
-            this.labelFoundCurrentPrice.Size = new System.Drawing.Size(182, 31);
-            this.labelFoundCurrentPrice.TabIndex = 14;
-            this.labelFoundCurrentPrice.Text = "Current Price:";
+            this.labelCurrentPrice.AutoSize = true;
+            this.labelCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelCurrentPrice.Location = new System.Drawing.Point(36, 187);
+            this.labelCurrentPrice.Name = "labelCurrentPrice";
+            this.labelCurrentPrice.Size = new System.Drawing.Size(182, 31);
+            this.labelCurrentPrice.TabIndex = 14;
+            this.labelCurrentPrice.Text = "Current Price:";
             // 
             // btnOpenAddStockWindow
             // 
@@ -116,7 +122,7 @@ namespace InvestmentChecker2
             this.btnOpenAddStockWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenAddStockWindow.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOpenAddStockWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnOpenAddStockWindow.Location = new System.Drawing.Point(164, 240);
+            this.btnOpenAddStockWindow.Location = new System.Drawing.Point(163, 302);
             this.btnOpenAddStockWindow.Name = "btnOpenAddStockWindow";
             this.btnOpenAddStockWindow.Size = new System.Drawing.Size(150, 50);
             this.btnOpenAddStockWindow.TabIndex = 15;
@@ -124,18 +130,74 @@ namespace InvestmentChecker2
             this.btnOpenAddStockWindow.UseVisualStyleBackColor = false;
             this.btnOpenAddStockWindow.Click += new System.EventHandler(this.OpenAddStockWindow);
             // 
+            // labelCurrency
+            // 
+            this.labelCurrency.AutoSize = true;
+            this.labelCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelCurrency.Location = new System.Drawing.Point(85, 233);
+            this.labelCurrency.Name = "labelCurrency";
+            this.labelCurrency.Size = new System.Drawing.Size(133, 31);
+            this.labelCurrency.TabIndex = 16;
+            this.labelCurrency.Text = "Currency:";
+            // 
+            // labelFoundTicker
+            // 
+            this.labelFoundTicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFoundTicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelFoundTicker.Location = new System.Drawing.Point(227, 93);
+            this.labelFoundTicker.Name = "labelFoundTicker";
+            this.labelFoundTicker.Size = new System.Drawing.Size(219, 31);
+            this.labelFoundTicker.TabIndex = 17;
+            this.labelFoundTicker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFoundName
+            // 
+            this.labelFoundName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFoundName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelFoundName.Location = new System.Drawing.Point(227, 140);
+            this.labelFoundName.Name = "labelFoundName";
+            this.labelFoundName.Size = new System.Drawing.Size(219, 31);
+            this.labelFoundName.TabIndex = 18;
+            this.labelFoundName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFoundCurrentPrice
+            // 
+            this.labelFoundCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFoundCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelFoundCurrentPrice.Location = new System.Drawing.Point(227, 187);
+            this.labelFoundCurrentPrice.Name = "labelFoundCurrentPrice";
+            this.labelFoundCurrentPrice.Size = new System.Drawing.Size(219, 31);
+            this.labelFoundCurrentPrice.TabIndex = 19;
+            this.labelFoundCurrentPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFoundCurrency
+            // 
+            this.labelFoundCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFoundCurrency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelFoundCurrency.Location = new System.Drawing.Point(227, 233);
+            this.labelFoundCurrency.Name = "labelFoundCurrency";
+            this.labelFoundCurrency.Size = new System.Drawing.Size(219, 31);
+            this.labelFoundCurrency.TabIndex = 20;
+            this.labelFoundCurrency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SearchStockWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(502, 300);
-            this.Controls.Add(this.btnOpenAddStockWindow);
+            this.ClientSize = new System.Drawing.Size(502, 364);
+            this.Controls.Add(this.labelFoundCurrency);
             this.Controls.Add(this.labelFoundCurrentPrice);
             this.Controls.Add(this.labelFoundName);
             this.Controls.Add(this.labelFoundTicker);
+            this.Controls.Add(this.labelCurrency);
+            this.Controls.Add(this.btnOpenAddStockWindow);
+            this.Controls.Add(this.labelCurrentPrice);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.labelTicker);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textInputProfileName);
+            this.Controls.Add(this.textInputTicker);
             this.Controls.Add(this.labelSearchTicker);
             this.Name = "SearchStockWindow";
             this.Text = "Search Stock";
@@ -147,11 +209,16 @@ namespace InvestmentChecker2
         #endregion
 
         private System.Windows.Forms.Label labelSearchTicker;
-        private System.Windows.Forms.TextBox textInputProfileName;
+        private System.Windows.Forms.TextBox textInputTicker;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label labelTicker;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelCurrentPrice;
+        private System.Windows.Forms.Button btnOpenAddStockWindow;
+        private System.Windows.Forms.Label labelCurrency;
         private System.Windows.Forms.Label labelFoundTicker;
         private System.Windows.Forms.Label labelFoundName;
         private System.Windows.Forms.Label labelFoundCurrentPrice;
-        private System.Windows.Forms.Button btnOpenAddStockWindow;
+        private System.Windows.Forms.Label labelFoundCurrency;
     }
 }

@@ -23,6 +23,13 @@ namespace InvestmentChecker2
 
         // Files
         public static char CSV_DELIMITER = ';';
+        public static char PYTHON_OUTPUT_DELIMITER = ';';
+        public static int NEXT_STOCK_ID;
+
+        // Python
+        static string pyexe = @"C:\Users\Andrew\AppData\Local\Programs\Python\Python38-32\python.exe";
+        public static string GET_STOCK_INFO_SCRIPT_PATH = "../../../Scripts/get_stock_info.py";
+        public static string GET_STOCK_PRICE_SCRIPT_PATH = "../../../Scripts/get_stock_price.py";
 
 
         // GLOBAL VARIABLES
@@ -33,7 +40,7 @@ namespace InvestmentChecker2
 
         // Stocks
         public static List<Stock> currentStocks = new List<Stock>();
-        public static List<int> stocksToBeDeleted = new List<int>();
+        public static bool stocksToBeDeleted = false;
 
         // FUNCTIONS
 
@@ -68,11 +75,12 @@ namespace InvestmentChecker2
                     while (!sr.EndOfStream)
                     {
                         /*
-                            0 - Ticker - String
-                            1 - Name - String
-                            2 - Buying price - Double
-                            3 - Quantity - Integer
-                            4 - Date bought - DateTime
+                            0 - ID - Integer
+                            1 - Ticker - String
+                            2 - Name - String
+                            3 - Buying price - Double
+                            4 - Quantity - Integer
+                            5 - Date bought - DateTime
                         */
                         // TODO: Better error handling
                         try
@@ -114,7 +122,7 @@ namespace InvestmentChecker2
             }
         }
 
-        static string CreateCSVLine(string[] arr)
+        public static string CreateCSVLine(string[] arr)
         {
             string line = "";
             foreach (string item in arr)
@@ -132,21 +140,24 @@ namespace InvestmentChecker2
             ErrorWindow window = new ErrorWindow(errorMessage);
             window.Show();
         }
-        public static void RunScript(string cmd, string args)
+        public static string[] RunScript(string scriptPath, string args)
         {
             ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = cmd;
-            start.Arguments = args;
+            start.FileName = pyexe;
+            start.Arguments = $"{scriptPath} {args}";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
+            start.CreateNoWindow = true;
+            string[] result = new string[2];
             using (Process process = Process.Start(start))
             {
                 using (StreamReader reader = process.StandardOutput)
                 {
-                    string result = reader.ReadToEnd();
-                    Console.Write(result);
+                    result[0] = reader.ReadLine(); // boolean whether the stock has been found or not
+                    result[1] = reader.ReadLine(); // stock information
                 }
             }
+            return result;
         }
     }
 }

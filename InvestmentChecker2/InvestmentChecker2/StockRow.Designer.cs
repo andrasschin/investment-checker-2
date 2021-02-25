@@ -92,7 +92,7 @@ namespace InvestmentChecker2
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(145, 60);
             this.labelName.TabIndex = 5;
-            this.labelName.Text = "label2";
+            this.labelName.Text = "First Solar Inc.";
             this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelQuantity
