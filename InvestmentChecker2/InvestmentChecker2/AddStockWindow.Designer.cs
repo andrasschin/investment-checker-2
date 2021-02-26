@@ -132,9 +132,9 @@ namespace InvestmentChecker2
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnAddStock.Location = new System.Drawing.Point(165, 333);
+            this.btnAddStock.Location = new System.Drawing.Point(98, 333);
             this.btnAddStock.Name = "btnAddStock";
-            this.btnAddStock.Size = new System.Drawing.Size(150, 50);
+            this.btnAddStock.Size = new System.Drawing.Size(318, 50);
             this.btnAddStock.TabIndex = 16;
             this.btnAddStock.Text = "Add Stock";
             this.btnAddStock.UseVisualStyleBackColor = false;

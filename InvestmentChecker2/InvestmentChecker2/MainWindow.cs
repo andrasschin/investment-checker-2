@@ -47,8 +47,8 @@ namespace InvestmentChecker2
             // Display new stocks
             for (int i = 0; i < App.currentStocks.Count; i++)
             {
-                Stock s = App.currentStocks[i];
-                StockRow stockRow = new StockRow(s.id, s.ticker, s.name, s.quantity, s.buyingPrice, s.dateBought);
+                Stock stock = App.currentStocks[i];
+                StockRow stockRow = new StockRow(stock);
                 stockRow.Top = i * STOCK_ROW_HEIGHT;
                 stockRow.Left = STOCK_ROW_LEFT_MARGIN;
 
@@ -57,7 +57,7 @@ namespace InvestmentChecker2
 
                 // Set next stock's id
                 // There might be a better solution to set this
-                App.NEXT_STOCK_ID = s.id;
+                App.NEXT_STOCK_ID = stock.id;
             }
             App.NEXT_STOCK_ID++;
         }

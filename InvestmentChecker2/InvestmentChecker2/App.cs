@@ -13,12 +13,18 @@ namespace InvestmentChecker2
     class App
     {
         // GLOBAL CONSTANTS
-        
+        // Display
+        public static int NUMBER_OF_FRAC_DIGITS = 3;
+
         // Folder paths
         public static string PROFILES_FOLDER_PATH = "./profiles/";
         public static string GetStocksFolderPath()
         {
             return $"./profiles/{currentProfile}/stocks";
+        }
+        public static string GetStocksFolderPathForProfile(string profile)
+        {
+            return $"./profiles/{profile}/stocks";
         }
 
         // Files

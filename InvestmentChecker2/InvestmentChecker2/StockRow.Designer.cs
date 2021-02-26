@@ -37,10 +37,10 @@ namespace InvestmentChecker2
             this.labelBuyingPrice = new System.Windows.Forms.Label();
             this.labelBuyingMarketValue = new System.Windows.Forms.Label();
             this.labelCurrentPrice = new System.Windows.Forms.Label();
+            this.labelPriceDifference = new System.Windows.Forms.Label();
             this.labelCurrentMarketValue = new System.Windows.Forms.Label();
-            this.labelChange = new System.Windows.Forms.Label();
+            this.labelMarketValueDifference = new System.Windows.Forms.Label();
             this.labelChangePercent = new System.Windows.Forms.Label();
-            this.labelGrowthPercent = new System.Windows.Forms.Label();
             this.labelDateBought = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -92,7 +92,7 @@ namespace InvestmentChecker2
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(145, 60);
             this.labelName.TabIndex = 5;
-            this.labelName.Text = "First Solar Inc.";
+            this.labelName.Text = "label2";
             this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelQuantity
@@ -121,7 +121,7 @@ namespace InvestmentChecker2
             // 
             this.labelBuyingMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBuyingMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelBuyingMarketValue.Location = new System.Drawing.Point(597, 0);
+            this.labelBuyingMarketValue.Location = new System.Drawing.Point(900, 0);
             this.labelBuyingMarketValue.Name = "labelBuyingMarketValue";
             this.labelBuyingMarketValue.Size = new System.Drawing.Size(145, 60);
             this.labelBuyingMarketValue.TabIndex = 8;
@@ -132,56 +132,56 @@ namespace InvestmentChecker2
             // 
             this.labelCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelCurrentPrice.Location = new System.Drawing.Point(747, 0);
+            this.labelCurrentPrice.Location = new System.Drawing.Point(598, 0);
             this.labelCurrentPrice.Name = "labelCurrentPrice";
             this.labelCurrentPrice.Size = new System.Drawing.Size(145, 60);
             this.labelCurrentPrice.TabIndex = 9;
             this.labelCurrentPrice.Text = "label6";
             this.labelCurrentPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelPriceDifference
+            // 
+            this.labelPriceDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPriceDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelPriceDifference.Location = new System.Drawing.Point(749, 0);
+            this.labelPriceDifference.Name = "labelPriceDifference";
+            this.labelPriceDifference.Size = new System.Drawing.Size(145, 60);
+            this.labelPriceDifference.TabIndex = 10;
+            this.labelPriceDifference.Text = "label7";
+            this.labelPriceDifference.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // labelCurrentMarketValue
             // 
             this.labelCurrentMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelCurrentMarketValue.Location = new System.Drawing.Point(897, 0);
+            this.labelCurrentMarketValue.Location = new System.Drawing.Point(1051, 0);
             this.labelCurrentMarketValue.Name = "labelCurrentMarketValue";
             this.labelCurrentMarketValue.Size = new System.Drawing.Size(145, 60);
-            this.labelCurrentMarketValue.TabIndex = 10;
-            this.labelCurrentMarketValue.Text = "label7";
+            this.labelCurrentMarketValue.TabIndex = 11;
+            this.labelCurrentMarketValue.Text = "label8";
             this.labelCurrentMarketValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelChange
+            // labelMarketValueDifference
             // 
-            this.labelChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelChange.Location = new System.Drawing.Point(1047, 0);
-            this.labelChange.Name = "labelChange";
-            this.labelChange.Size = new System.Drawing.Size(145, 60);
-            this.labelChange.TabIndex = 11;
-            this.labelChange.Text = "label8";
-            this.labelChange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelMarketValueDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelMarketValueDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelMarketValueDifference.Location = new System.Drawing.Point(1202, 0);
+            this.labelMarketValueDifference.Name = "labelMarketValueDifference";
+            this.labelMarketValueDifference.Size = new System.Drawing.Size(145, 60);
+            this.labelMarketValueDifference.TabIndex = 12;
+            this.labelMarketValueDifference.Text = "label9";
+            this.labelMarketValueDifference.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelChangePercent
             // 
             this.labelChangePercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelChangePercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelChangePercent.Location = new System.Drawing.Point(1197, 0);
+            this.labelChangePercent.Location = new System.Drawing.Point(1347, 0);
             this.labelChangePercent.Name = "labelChangePercent";
             this.labelChangePercent.Size = new System.Drawing.Size(145, 60);
-            this.labelChangePercent.TabIndex = 12;
-            this.labelChangePercent.Text = "label9";
+            this.labelChangePercent.TabIndex = 13;
+            this.labelChangePercent.Text = "label10";
             this.labelChangePercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelGrowthPercent
-            // 
-            this.labelGrowthPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelGrowthPercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelGrowthPercent.Location = new System.Drawing.Point(1347, 0);
-            this.labelGrowthPercent.Name = "labelGrowthPercent";
-            this.labelGrowthPercent.Size = new System.Drawing.Size(145, 60);
-            this.labelGrowthPercent.TabIndex = 13;
-            this.labelGrowthPercent.Text = "label10";
-            this.labelGrowthPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelDateBought
             // 
@@ -200,10 +200,10 @@ namespace InvestmentChecker2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.labelDateBought);
-            this.Controls.Add(this.labelGrowthPercent);
             this.Controls.Add(this.labelChangePercent);
-            this.Controls.Add(this.labelChange);
+            this.Controls.Add(this.labelMarketValueDifference);
             this.Controls.Add(this.labelCurrentMarketValue);
+            this.Controls.Add(this.labelPriceDifference);
             this.Controls.Add(this.labelCurrentPrice);
             this.Controls.Add(this.labelBuyingMarketValue);
             this.Controls.Add(this.labelBuyingPrice);
@@ -214,6 +214,7 @@ namespace InvestmentChecker2
             this.Controls.Add(this.buttonRemove);
             this.Name = "StockRow";
             this.Size = new System.Drawing.Size(1724, 65);
+            this.Load += new System.EventHandler(this.StockRowLoad);
             this.ResumeLayout(false);
 
         }
@@ -228,10 +229,10 @@ namespace InvestmentChecker2
         private System.Windows.Forms.Label labelBuyingPrice;
         private System.Windows.Forms.Label labelBuyingMarketValue;
         private System.Windows.Forms.Label labelCurrentPrice;
+        private System.Windows.Forms.Label labelPriceDifference;
         private System.Windows.Forms.Label labelCurrentMarketValue;
-        private System.Windows.Forms.Label labelChange;
+        private System.Windows.Forms.Label labelMarketValueDifference;
         private System.Windows.Forms.Label labelChangePercent;
-        private System.Windows.Forms.Label labelGrowthPercent;
         private System.Windows.Forms.Label labelDateBought;
     }
 }

@@ -14,14 +14,16 @@ namespace InvestmentChecker2
     public partial class AddStockWindow : Form
     {
         string ticker;
+        string profileToAddTo;
         public AddStockWindow(string ticker, string defaultName)
         {
             InitializeComponent();
             this.ticker = ticker;
+            profileToAddTo = App.currentProfile;
 
             labelFoundTicker.Text = ticker;
             textInputName.Text = defaultName;
-            btnAddStock.Text = $"Add stock to: {App.currentProfile}";
+            btnAddStock.Text = $"Add stock to: {profileToAddTo}";
         }
 
         private void AddStock(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace InvestmentChecker2
             if (validationResult == "")
             {
                 // Save the stock
-                using (StreamWriter sw = new StreamWriter($"{App.GetStocksFolderPath()}/stocks.csv", append: true))
+                using (StreamWriter sw = new StreamWriter($"{App.GetStocksFolderPathForProfile(profileToAddTo)}/stocks.csv", append: true))
                 {
                     string[] stockInformation = { App.NEXT_STOCK_ID.ToString(), ticker, textInputName.Text, textInputQuantity.Text, textInputBuyingPrice.Text, textInputDateBought.Text };
                     sw.WriteLine(App.CreateCSVLine(stockInformation));
@@ -58,7 +60,7 @@ namespace InvestmentChecker2
 
             if ((textInputBuyingPrice.TextLength) == 0 || !(double.TryParse(textInputBuyingPrice.Text, out tempD)))
             {
-                error += "Buying price must be a number (decimals seperated with a dot).\n";
+                error += "Buying price must be a number (decimals seperated with a comma).\n";
             }
             if ((textInputQuantity.TextLength == 0) || !(int.TryParse(textInputQuantity.Text, out tempI)))
             {

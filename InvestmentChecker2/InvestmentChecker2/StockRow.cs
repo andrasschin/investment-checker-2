@@ -13,16 +13,51 @@ namespace InvestmentChecker2
     public partial class StockRow : UserControl
     {
         int id;
-        public StockRow(int id, string ticker, string name, int quantity, double buyingPrice, DateTime dateBought)
+        int fracDigits;
+
+        Color inProfit = Color.FromArgb(255, 53, 255, 205);
+        Color inLoss = Color.FromArgb(255, 255, 73, 92);
+
+        private double priceDifference;
+
+        public double PriceDifference
+        {
+            get { return priceDifference; }
+            set { priceDifference = value; }
+        }
+
+        public StockRow(Stock stock)
         {
             InitializeComponent();
-            labelTicker.Text = ticker;
-            labelName.Text = name;
-            labelQuantity.Text = quantity.ToString();
-            labelBuyingPrice.Text = buyingPrice.ToString();
-            labelDateBought.Text = dateBought.ToShortDateString().ToString();
+            id = stock.id;
+            fracDigits = App.NUMBER_OF_FRAC_DIGITS;
 
-            this.id = id;
+            labelTicker.Text = stock.ticker;
+            labelName.Text = stock.name;
+            labelQuantity.Text = stock.quantity.ToString();
+            labelBuyingPrice.Text = stock.buyingPrice.ToString();
+            labelCurrentPrice.Text = Math.Round(stock.CurrentPrice, fracDigits).ToString();
+            labelPriceDifference.Text = Math.Round(stock.PriceDifference, fracDigits).ToString();
+            labelBuyingMarketValue.Text = stock.BuyingMarketValue.ToString();
+            labelCurrentMarketValue.Text = Math.Round(stock.CurrentMarketValue, fracDigits).ToString();
+            labelMarketValueDifference.Text = Math.Round(stock.MarketValueDifference, fracDigits).ToString();
+            labelChangePercent.Text = Math.Round(stock.ChangePercent, fracDigits).ToString() + "%";
+            labelDateBought.Text = stock.dateBought.ToShortDateString().ToString();
+
+            // Might not be the best solution
+            if (stock.PriceDifference > 0)
+            {
+                labelPriceDifference.ForeColor = inProfit;
+                labelMarketValueDifference.ForeColor = inProfit;
+                labelChangePercent.ForeColor = inProfit;
+            }
+            else if (stock.PriceDifference < 0)
+            {
+                labelPriceDifference.ForeColor = inLoss;
+                labelMarketValueDifference.ForeColor = inLoss;
+                labelChangePercent.ForeColor = inLoss;
+            }
+
         }
 
         private void RemoveStock(object sender, EventArgs e)
@@ -41,6 +76,11 @@ namespace InvestmentChecker2
 
             // Schedule for deletion in stocks.csv
             App.stocksToBeDeleted = true;
+
+        }
+
+        private void StockRowLoad(object sender, EventArgs e)
+        {
 
         }
     }

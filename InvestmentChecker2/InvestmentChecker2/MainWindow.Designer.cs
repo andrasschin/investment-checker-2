@@ -38,9 +38,9 @@ namespace InvestmentChecker2
             this.panelColumnns = new System.Windows.Forms.Panel();
             this.btnHeaderQuantity = new System.Windows.Forms.Button();
             this.btnHeaderDateBought = new System.Windows.Forms.Button();
-            this.btnHeaderGrowthPercent = new System.Windows.Forms.Button();
             this.btnHeaderChangePercent = new System.Windows.Forms.Button();
-            this.btnHeaderChange = new System.Windows.Forms.Button();
+            this.btnHeaderPriceDifference = new System.Windows.Forms.Button();
+            this.btnHeaderMarketValueDifference = new System.Windows.Forms.Button();
             this.btnHeaderCurrentMarketValue = new System.Windows.Forms.Button();
             this.btnHeaderCurrentPrice = new System.Windows.Forms.Button();
             this.btnHeaderBuyingMarkeValue = new System.Windows.Forms.Button();
@@ -131,14 +131,14 @@ namespace InvestmentChecker2
             // 
             // panelColumnns
             // 
+            this.panelColumnns.Controls.Add(this.btnHeaderPriceDifference);
+            this.panelColumnns.Controls.Add(this.btnHeaderBuyingMarkeValue);
             this.panelColumnns.Controls.Add(this.btnHeaderQuantity);
             this.panelColumnns.Controls.Add(this.btnHeaderDateBought);
-            this.panelColumnns.Controls.Add(this.btnHeaderGrowthPercent);
             this.panelColumnns.Controls.Add(this.btnHeaderChangePercent);
-            this.panelColumnns.Controls.Add(this.btnHeaderChange);
+            this.panelColumnns.Controls.Add(this.btnHeaderMarketValueDifference);
             this.panelColumnns.Controls.Add(this.btnHeaderCurrentMarketValue);
             this.panelColumnns.Controls.Add(this.btnHeaderCurrentPrice);
-            this.panelColumnns.Controls.Add(this.btnHeaderBuyingMarkeValue);
             this.panelColumnns.Controls.Add(this.btnHeaderBuyingPrice);
             this.panelColumnns.Controls.Add(this.btnHeaderName);
             this.panelColumnns.Controls.Add(this.btnHeaderTicker);
@@ -179,22 +179,6 @@ namespace InvestmentChecker2
             this.btnHeaderDateBought.Text = "Date Bought";
             this.btnHeaderDateBought.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderGrowthPercent
-            // 
-            this.btnHeaderGrowthPercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderGrowthPercent.FlatAppearance.BorderSize = 0;
-            this.btnHeaderGrowthPercent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderGrowthPercent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderGrowthPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderGrowthPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderGrowthPercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderGrowthPercent.Location = new System.Drawing.Point(1359, 3);
-            this.btnHeaderGrowthPercent.Name = "btnHeaderGrowthPercent";
-            this.btnHeaderGrowthPercent.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderGrowthPercent.TabIndex = 15;
-            this.btnHeaderGrowthPercent.Text = "Growth (%)";
-            this.btnHeaderGrowthPercent.UseVisualStyleBackColor = false;
-            // 
             // btnHeaderChangePercent
             // 
             this.btnHeaderChangePercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -204,28 +188,44 @@ namespace InvestmentChecker2
             this.btnHeaderChangePercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeaderChangePercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnHeaderChangePercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderChangePercent.Location = new System.Drawing.Point(1208, 3);
+            this.btnHeaderChangePercent.Location = new System.Drawing.Point(1359, 3);
             this.btnHeaderChangePercent.Name = "btnHeaderChangePercent";
             this.btnHeaderChangePercent.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderChangePercent.TabIndex = 14;
+            this.btnHeaderChangePercent.TabIndex = 15;
             this.btnHeaderChangePercent.Text = "Change (%)";
             this.btnHeaderChangePercent.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderChange
+            // btnHeaderPriceDifference
             // 
-            this.btnHeaderChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderChange.FlatAppearance.BorderSize = 0;
-            this.btnHeaderChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderChange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderChange.Location = new System.Drawing.Point(1057, 3);
-            this.btnHeaderChange.Name = "btnHeaderChange";
-            this.btnHeaderChange.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderChange.TabIndex = 13;
-            this.btnHeaderChange.Text = "Change";
-            this.btnHeaderChange.UseVisualStyleBackColor = false;
+            this.btnHeaderPriceDifference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnHeaderPriceDifference.FlatAppearance.BorderSize = 0;
+            this.btnHeaderPriceDifference.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnHeaderPriceDifference.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnHeaderPriceDifference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHeaderPriceDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnHeaderPriceDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnHeaderPriceDifference.Location = new System.Drawing.Point(755, 3);
+            this.btnHeaderPriceDifference.Name = "btnHeaderPriceDifference";
+            this.btnHeaderPriceDifference.Size = new System.Drawing.Size(145, 60);
+            this.btnHeaderPriceDifference.TabIndex = 14;
+            this.btnHeaderPriceDifference.Text = "Price Difference";
+            this.btnHeaderPriceDifference.UseVisualStyleBackColor = false;
+            // 
+            // btnHeaderMarketValueDifference
+            // 
+            this.btnHeaderMarketValueDifference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnHeaderMarketValueDifference.FlatAppearance.BorderSize = 0;
+            this.btnHeaderMarketValueDifference.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnHeaderMarketValueDifference.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnHeaderMarketValueDifference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHeaderMarketValueDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnHeaderMarketValueDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnHeaderMarketValueDifference.Location = new System.Drawing.Point(1208, 3);
+            this.btnHeaderMarketValueDifference.Name = "btnHeaderMarketValueDifference";
+            this.btnHeaderMarketValueDifference.Size = new System.Drawing.Size(145, 60);
+            this.btnHeaderMarketValueDifference.TabIndex = 13;
+            this.btnHeaderMarketValueDifference.Text = "Market Value Difference";
+            this.btnHeaderMarketValueDifference.UseVisualStyleBackColor = false;
             // 
             // btnHeaderCurrentMarketValue
             // 
@@ -236,7 +236,7 @@ namespace InvestmentChecker2
             this.btnHeaderCurrentMarketValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeaderCurrentMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnHeaderCurrentMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderCurrentMarketValue.Location = new System.Drawing.Point(906, 3);
+            this.btnHeaderCurrentMarketValue.Location = new System.Drawing.Point(1057, 3);
             this.btnHeaderCurrentMarketValue.Name = "btnHeaderCurrentMarketValue";
             this.btnHeaderCurrentMarketValue.Size = new System.Drawing.Size(145, 60);
             this.btnHeaderCurrentMarketValue.TabIndex = 12;
@@ -252,7 +252,7 @@ namespace InvestmentChecker2
             this.btnHeaderCurrentPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeaderCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnHeaderCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderCurrentPrice.Location = new System.Drawing.Point(755, 3);
+            this.btnHeaderCurrentPrice.Location = new System.Drawing.Point(604, 3);
             this.btnHeaderCurrentPrice.Name = "btnHeaderCurrentPrice";
             this.btnHeaderCurrentPrice.Size = new System.Drawing.Size(145, 60);
             this.btnHeaderCurrentPrice.TabIndex = 11;
@@ -268,7 +268,7 @@ namespace InvestmentChecker2
             this.btnHeaderBuyingMarkeValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeaderBuyingMarkeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnHeaderBuyingMarkeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderBuyingMarkeValue.Location = new System.Drawing.Point(604, 1);
+            this.btnHeaderBuyingMarkeValue.Location = new System.Drawing.Point(906, 3);
             this.btnHeaderBuyingMarkeValue.Name = "btnHeaderBuyingMarkeValue";
             this.btnHeaderBuyingMarkeValue.Size = new System.Drawing.Size(145, 60);
             this.btnHeaderBuyingMarkeValue.TabIndex = 10;
@@ -360,9 +360,9 @@ namespace InvestmentChecker2
         private System.Windows.Forms.Button btnHeaderBuyingPrice;
         private System.Windows.Forms.Button btnHeaderName;
         private System.Windows.Forms.Button btnHeaderTicker;
+        private System.Windows.Forms.Button btnHeaderPriceDifference;
+        private System.Windows.Forms.Button btnHeaderMarketValueDifference;
         private System.Windows.Forms.Button btnHeaderChangePercent;
-        private System.Windows.Forms.Button btnHeaderChange;
-        private System.Windows.Forms.Button btnHeaderGrowthPercent;
         private System.Windows.Forms.Button btnHeaderDateBought;
         private System.Windows.Forms.Button btnHeaderQuantity;
     }
