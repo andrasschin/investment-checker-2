@@ -42,6 +42,7 @@ namespace InvestmentChecker2
             this.labelMarketValueDifference = new System.Windows.Forms.Label();
             this.labelChangePercent = new System.Windows.Forms.Label();
             this.labelDateBought = new System.Windows.Forms.Label();
+            this.labelCurrency = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonRemove
@@ -51,7 +52,7 @@ namespace InvestmentChecker2
             this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonRemove.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonRemove.Location = new System.Drawing.Point(1684, 15);
+            this.buttonRemove.Location = new System.Drawing.Point(1680, 15);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(32, 30);
             this.buttonRemove.TabIndex = 2;
@@ -66,7 +67,7 @@ namespace InvestmentChecker2
             this.buttonDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.buttonDetails.Location = new System.Drawing.Point(1647, 15);
+            this.buttonDetails.Location = new System.Drawing.Point(1642, 15);
             this.buttonDetails.Name = "buttonDetails";
             this.buttonDetails.Size = new System.Drawing.Size(32, 30);
             this.buttonDetails.TabIndex = 3;
@@ -79,7 +80,7 @@ namespace InvestmentChecker2
             this.labelTicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.labelTicker.Location = new System.Drawing.Point(-3, 0);
             this.labelTicker.Name = "labelTicker";
-            this.labelTicker.Size = new System.Drawing.Size(145, 60);
+            this.labelTicker.Size = new System.Drawing.Size(100, 60);
             this.labelTicker.TabIndex = 4;
             this.labelTicker.Text = "label1";
             this.labelTicker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,9 +89,9 @@ namespace InvestmentChecker2
             // 
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelName.Location = new System.Drawing.Point(147, 0);
+            this.labelName.Location = new System.Drawing.Point(103, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(145, 60);
+            this.labelName.Size = new System.Drawing.Size(192, 60);
             this.labelName.TabIndex = 5;
             this.labelName.Text = "label2";
             this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,9 +100,9 @@ namespace InvestmentChecker2
             // 
             this.labelQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelQuantity.Location = new System.Drawing.Point(297, 0);
+            this.labelQuantity.Location = new System.Drawing.Point(301, 0);
             this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(145, 60);
+            this.labelQuantity.Size = new System.Drawing.Size(102, 60);
             this.labelQuantity.TabIndex = 6;
             this.labelQuantity.Text = "label3";
             this.labelQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,9 +111,9 @@ namespace InvestmentChecker2
             // 
             this.labelBuyingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBuyingPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelBuyingPrice.Location = new System.Drawing.Point(447, 0);
+            this.labelBuyingPrice.Location = new System.Drawing.Point(409, 0);
             this.labelBuyingPrice.Name = "labelBuyingPrice";
-            this.labelBuyingPrice.Size = new System.Drawing.Size(145, 60);
+            this.labelBuyingPrice.Size = new System.Drawing.Size(120, 60);
             this.labelBuyingPrice.TabIndex = 7;
             this.labelBuyingPrice.Text = "label4";
             this.labelBuyingPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,7 +122,7 @@ namespace InvestmentChecker2
             // 
             this.labelBuyingMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBuyingMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelBuyingMarketValue.Location = new System.Drawing.Point(900, 0);
+            this.labelBuyingMarketValue.Location = new System.Drawing.Point(787, 0);
             this.labelBuyingMarketValue.Name = "labelBuyingMarketValue";
             this.labelBuyingMarketValue.Size = new System.Drawing.Size(145, 60);
             this.labelBuyingMarketValue.TabIndex = 8;
@@ -132,9 +133,9 @@ namespace InvestmentChecker2
             // 
             this.labelCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelCurrentPrice.Location = new System.Drawing.Point(598, 0);
+            this.labelCurrentPrice.Location = new System.Drawing.Point(535, 0);
             this.labelCurrentPrice.Name = "labelCurrentPrice";
-            this.labelCurrentPrice.Size = new System.Drawing.Size(145, 60);
+            this.labelCurrentPrice.Size = new System.Drawing.Size(120, 60);
             this.labelCurrentPrice.TabIndex = 9;
             this.labelCurrentPrice.Text = "label6";
             this.labelCurrentPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,9 +144,9 @@ namespace InvestmentChecker2
             // 
             this.labelPriceDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelPriceDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelPriceDifference.Location = new System.Drawing.Point(749, 0);
+            this.labelPriceDifference.Location = new System.Drawing.Point(661, 0);
             this.labelPriceDifference.Name = "labelPriceDifference";
-            this.labelPriceDifference.Size = new System.Drawing.Size(145, 60);
+            this.labelPriceDifference.Size = new System.Drawing.Size(120, 60);
             this.labelPriceDifference.TabIndex = 10;
             this.labelPriceDifference.Text = "label7";
             this.labelPriceDifference.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +155,7 @@ namespace InvestmentChecker2
             // 
             this.labelCurrentMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelCurrentMarketValue.Location = new System.Drawing.Point(1051, 0);
+            this.labelCurrentMarketValue.Location = new System.Drawing.Point(938, 0);
             this.labelCurrentMarketValue.Name = "labelCurrentMarketValue";
             this.labelCurrentMarketValue.Size = new System.Drawing.Size(145, 60);
             this.labelCurrentMarketValue.TabIndex = 11;
@@ -165,9 +166,9 @@ namespace InvestmentChecker2
             // 
             this.labelMarketValueDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelMarketValueDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelMarketValueDifference.Location = new System.Drawing.Point(1202, 0);
+            this.labelMarketValueDifference.Location = new System.Drawing.Point(1089, 0);
             this.labelMarketValueDifference.Name = "labelMarketValueDifference";
-            this.labelMarketValueDifference.Size = new System.Drawing.Size(145, 60);
+            this.labelMarketValueDifference.Size = new System.Drawing.Size(120, 60);
             this.labelMarketValueDifference.TabIndex = 12;
             this.labelMarketValueDifference.Text = "label9";
             this.labelMarketValueDifference.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,9 +177,9 @@ namespace InvestmentChecker2
             // 
             this.labelChangePercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelChangePercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelChangePercent.Location = new System.Drawing.Point(1347, 0);
+            this.labelChangePercent.Location = new System.Drawing.Point(1215, 0);
             this.labelChangePercent.Name = "labelChangePercent";
-            this.labelChangePercent.Size = new System.Drawing.Size(145, 60);
+            this.labelChangePercent.Size = new System.Drawing.Size(120, 60);
             this.labelChangePercent.TabIndex = 13;
             this.labelChangePercent.Text = "label10";
             this.labelChangePercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,18 +188,30 @@ namespace InvestmentChecker2
             // 
             this.labelDateBought.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelDateBought.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelDateBought.Location = new System.Drawing.Point(1497, 0);
+            this.labelDateBought.Location = new System.Drawing.Point(1467, 0);
             this.labelDateBought.Name = "labelDateBought";
-            this.labelDateBought.Size = new System.Drawing.Size(145, 60);
+            this.labelDateBought.Size = new System.Drawing.Size(140, 60);
             this.labelDateBought.TabIndex = 14;
             this.labelDateBought.Text = "label11";
             this.labelDateBought.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCurrency
+            // 
+            this.labelCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelCurrency.Location = new System.Drawing.Point(1341, 0);
+            this.labelCurrency.Name = "labelCurrency";
+            this.labelCurrency.Size = new System.Drawing.Size(120, 60);
+            this.labelCurrency.TabIndex = 15;
+            this.labelCurrency.Text = "label10";
+            this.labelCurrency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // StockRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Controls.Add(this.labelCurrency);
             this.Controls.Add(this.labelDateBought);
             this.Controls.Add(this.labelChangePercent);
             this.Controls.Add(this.labelMarketValueDifference);
@@ -213,7 +226,7 @@ namespace InvestmentChecker2
             this.Controls.Add(this.buttonDetails);
             this.Controls.Add(this.buttonRemove);
             this.Name = "StockRow";
-            this.Size = new System.Drawing.Size(1724, 65);
+            this.Size = new System.Drawing.Size(1734, 65);
             this.Load += new System.EventHandler(this.StockRowLoad);
             this.ResumeLayout(false);
 
@@ -234,5 +247,6 @@ namespace InvestmentChecker2
         private System.Windows.Forms.Label labelMarketValueDifference;
         private System.Windows.Forms.Label labelChangePercent;
         private System.Windows.Forms.Label labelDateBought;
+        private System.Windows.Forms.Label labelCurrency;
     }
 }

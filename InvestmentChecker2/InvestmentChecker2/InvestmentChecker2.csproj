@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCurrencyExchangeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCurrencyExchangeWindow.Designer.cs">
+      <DependentUpon>AddCurrencyExchangeWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddProfileWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,13 @@
     </Compile>
     <Compile Include="AddStockWindow.Designer.cs">
       <DependentUpon>AddStockWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyExchange.cs" />
+    <Compile Include="CurrencyExchangeRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CurrencyExchangeRow.Designer.cs">
+      <DependentUpon>CurrencyExchangeRow.cs</DependentUpon>
     </Compile>
     <Compile Include="ErrorWindow.cs">
       <SubType>Form</SubType>
@@ -93,11 +106,17 @@
     <Compile Include="StockRow.Designer.cs">
       <DependentUpon>StockRow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCurrencyExchangeWindow.resx">
+      <DependentUpon>AddCurrencyExchangeWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddProfileWindow.resx">
       <DependentUpon>AddProfileWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddStockWindow.resx">
       <DependentUpon>AddStockWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrencyExchangeRow.resx">
+      <DependentUpon>CurrencyExchangeRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorWindow.resx">
       <DependentUpon>ErrorWindow.cs</DependentUpon>

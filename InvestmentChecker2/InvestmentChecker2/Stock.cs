@@ -14,6 +14,7 @@ namespace InvestmentChecker2
         public string name;
         public double buyingPrice;
         public int quantity;
+        public string currency;
         public DateTime dateBought;
 
         private double currentPrice;
@@ -61,13 +62,14 @@ namespace InvestmentChecker2
             set { }
         }
 
-        public Stock(int id, string ticker, string name, double buyingPrice, int quantity, DateTime dateBought)
+        public Stock(int id, string ticker, string name, double buyingPrice, int quantity, string currency, DateTime dateBought)
         {
             this.id = id;
             this.ticker = ticker;
             this.name = name;
             this.buyingPrice = buyingPrice;
             this.quantity = quantity;
+            this.currency = currency;
             this.dateBought = dateBought;
         }
 

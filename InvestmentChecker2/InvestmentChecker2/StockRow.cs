@@ -42,6 +42,7 @@ namespace InvestmentChecker2
             labelCurrentMarketValue.Text = Math.Round(stock.CurrentMarketValue, fracDigits).ToString();
             labelMarketValueDifference.Text = Math.Round(stock.MarketValueDifference, fracDigits).ToString();
             labelChangePercent.Text = Math.Round(stock.ChangePercent, fracDigits).ToString() + "%";
+            labelCurrency.Text = stock.currency;
             labelDateBought.Text = stock.dateBought.ToShortDateString().ToString();
 
             // Might not be the best solution

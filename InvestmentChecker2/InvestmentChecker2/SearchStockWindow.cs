@@ -69,7 +69,7 @@ namespace InvestmentChecker2
         {
             if (stockExists)
             {
-                AddStockWindow window = new AddStockWindow(FoundTicker, FoundName);
+                AddStockWindow window = new AddStockWindow(FoundTicker, FoundName, FoundCurrency);
                 window.Show();
                 Close();
             } else

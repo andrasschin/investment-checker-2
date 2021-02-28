@@ -34,20 +34,30 @@ namespace InvestmentChecker2
             this.btnAddStock = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.panelStocks = new System.Windows.Forms.Panel();
-            this.panelCurrencies = new System.Windows.Forms.Panel();
-            this.panelColumnns = new System.Windows.Forms.Panel();
-            this.btnHeaderQuantity = new System.Windows.Forms.Button();
-            this.btnHeaderDateBought = new System.Windows.Forms.Button();
-            this.btnHeaderChangePercent = new System.Windows.Forms.Button();
-            this.btnHeaderPriceDifference = new System.Windows.Forms.Button();
-            this.btnHeaderMarketValueDifference = new System.Windows.Forms.Button();
-            this.btnHeaderCurrentMarketValue = new System.Windows.Forms.Button();
-            this.btnHeaderCurrentPrice = new System.Windows.Forms.Button();
-            this.btnHeaderBuyingMarkeValue = new System.Windows.Forms.Button();
-            this.btnHeaderBuyingPrice = new System.Windows.Forms.Button();
-            this.btnHeaderName = new System.Windows.Forms.Button();
-            this.btnHeaderTicker = new System.Windows.Forms.Button();
-            this.panelColumnns.SuspendLayout();
+            this.panelCurrencyExhanges = new System.Windows.Forms.Panel();
+            this.panelStockColumns = new System.Windows.Forms.Panel();
+            this.btnSHeaderCurrency = new System.Windows.Forms.Button();
+            this.btnSHeaderPriceDifference = new System.Windows.Forms.Button();
+            this.btnSHeaderBuyingMarkeValue = new System.Windows.Forms.Button();
+            this.btnSHeaderQuantity = new System.Windows.Forms.Button();
+            this.btnSHeaderDateBought = new System.Windows.Forms.Button();
+            this.btnSHeaderChangePercent = new System.Windows.Forms.Button();
+            this.btnSHeaderMarketValueDifference = new System.Windows.Forms.Button();
+            this.btnSHeaderCurrentMarketValue = new System.Windows.Forms.Button();
+            this.btnSHeaderCurrentPrice = new System.Windows.Forms.Button();
+            this.btnSHeaderBuyingPrice = new System.Windows.Forms.Button();
+            this.btnSHeaderName = new System.Windows.Forms.Button();
+            this.btnSHeaderTicker = new System.Windows.Forms.Button();
+            this.panelCurrencyExchangeColumns = new System.Windows.Forms.Panel();
+            this.btnCEHeaderBuyingMarketValue = new System.Windows.Forms.Button();
+            this.btnCEHeaderQuantity = new System.Windows.Forms.Button();
+            this.btnCEHeaderBuyingPrice = new System.Windows.Forms.Button();
+            this.buttonCEHeaderCurrencyFrom = new System.Windows.Forms.Button();
+            this.buttonAddCurrency = new System.Windows.Forms.Button();
+            this.btnCEHeaderDateBought = new System.Windows.Forms.Button();
+            this.btnCEHeaderCurrencyTo = new System.Windows.Forms.Button();
+            this.panelStockColumns.SuspendLayout();
+            this.panelCurrencyExchangeColumns.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddProfile
@@ -104,9 +114,9 @@ namespace InvestmentChecker2
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnSettings.Location = new System.Drawing.Point(440, 22);
+            this.btnSettings.Location = new System.Drawing.Point(633, 24);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(159, 47);
+            this.btnSettings.Size = new System.Drawing.Size(143, 47);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -119,218 +129,363 @@ namespace InvestmentChecker2
             this.panelStocks.AutoScroll = true;
             this.panelStocks.Location = new System.Drawing.Point(24, 174);
             this.panelStocks.Name = "panelStocks";
-            this.panelStocks.Size = new System.Drawing.Size(1724, 348);
+            this.panelStocks.Size = new System.Drawing.Size(1740, 411);
             this.panelStocks.TabIndex = 4;
             // 
-            // panelCurrencies
+            // panelCurrencyExhanges
             // 
-            this.panelCurrencies.Location = new System.Drawing.Point(1754, 102);
-            this.panelCurrencies.Name = "panelCurrencies";
-            this.panelCurrencies.Size = new System.Drawing.Size(258, 420);
-            this.panelCurrencies.TabIndex = 5;
+            this.panelCurrencyExhanges.Location = new System.Drawing.Point(24, 700);
+            this.panelCurrencyExhanges.Name = "panelCurrencyExhanges";
+            this.panelCurrencyExhanges.Size = new System.Drawing.Size(837, 173);
+            this.panelCurrencyExhanges.TabIndex = 5;
             // 
-            // panelColumnns
+            // panelStockColumns
             // 
-            this.panelColumnns.Controls.Add(this.btnHeaderPriceDifference);
-            this.panelColumnns.Controls.Add(this.btnHeaderBuyingMarkeValue);
-            this.panelColumnns.Controls.Add(this.btnHeaderQuantity);
-            this.panelColumnns.Controls.Add(this.btnHeaderDateBought);
-            this.panelColumnns.Controls.Add(this.btnHeaderChangePercent);
-            this.panelColumnns.Controls.Add(this.btnHeaderMarketValueDifference);
-            this.panelColumnns.Controls.Add(this.btnHeaderCurrentMarketValue);
-            this.panelColumnns.Controls.Add(this.btnHeaderCurrentPrice);
-            this.panelColumnns.Controls.Add(this.btnHeaderBuyingPrice);
-            this.panelColumnns.Controls.Add(this.btnHeaderName);
-            this.panelColumnns.Controls.Add(this.btnHeaderTicker);
-            this.panelColumnns.Location = new System.Drawing.Point(24, 102);
-            this.panelColumnns.Name = "panelColumnns";
-            this.panelColumnns.Size = new System.Drawing.Size(1724, 66);
-            this.panelColumnns.TabIndex = 6;
+            this.panelStockColumns.Controls.Add(this.btnSHeaderCurrency);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderPriceDifference);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderBuyingMarkeValue);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderQuantity);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderDateBought);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderChangePercent);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderMarketValueDifference);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderCurrentMarketValue);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderCurrentPrice);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderBuyingPrice);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderName);
+            this.panelStockColumns.Controls.Add(this.btnSHeaderTicker);
+            this.panelStockColumns.Location = new System.Drawing.Point(24, 102);
+            this.panelStockColumns.Name = "panelStockColumns";
+            this.panelStockColumns.Size = new System.Drawing.Size(1740, 66);
+            this.panelStockColumns.TabIndex = 6;
             // 
-            // btnHeaderQuantity
+            // btnSHeaderCurrency
             // 
-            this.btnHeaderQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderQuantity.FlatAppearance.BorderSize = 0;
-            this.btnHeaderQuantity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderQuantity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderQuantity.Location = new System.Drawing.Point(302, 3);
-            this.btnHeaderQuantity.Name = "btnHeaderQuantity";
-            this.btnHeaderQuantity.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderQuantity.TabIndex = 17;
-            this.btnHeaderQuantity.Text = "Quantity";
-            this.btnHeaderQuantity.UseVisualStyleBackColor = false;
+            this.btnSHeaderCurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderCurrency.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderCurrency.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderCurrency.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderCurrency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderCurrency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderCurrency.Location = new System.Drawing.Point(1345, 3);
+            this.btnSHeaderCurrency.Name = "btnSHeaderCurrency";
+            this.btnSHeaderCurrency.Size = new System.Drawing.Size(120, 60);
+            this.btnSHeaderCurrency.TabIndex = 18;
+            this.btnSHeaderCurrency.Text = "Currency";
+            this.btnSHeaderCurrency.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderDateBought
+            // btnSHeaderPriceDifference
             // 
-            this.btnHeaderDateBought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderDateBought.FlatAppearance.BorderSize = 0;
-            this.btnHeaderDateBought.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderDateBought.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderDateBought.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderDateBought.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderDateBought.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderDateBought.Location = new System.Drawing.Point(1510, 3);
-            this.btnHeaderDateBought.Name = "btnHeaderDateBought";
-            this.btnHeaderDateBought.Size = new System.Drawing.Size(147, 60);
-            this.btnHeaderDateBought.TabIndex = 16;
-            this.btnHeaderDateBought.Text = "Date Bought";
-            this.btnHeaderDateBought.UseVisualStyleBackColor = false;
+            this.btnSHeaderPriceDifference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderPriceDifference.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderPriceDifference.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderPriceDifference.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderPriceDifference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderPriceDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderPriceDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderPriceDifference.Location = new System.Drawing.Point(665, 3);
+            this.btnSHeaderPriceDifference.Name = "btnSHeaderPriceDifference";
+            this.btnSHeaderPriceDifference.Size = new System.Drawing.Size(120, 60);
+            this.btnSHeaderPriceDifference.TabIndex = 14;
+            this.btnSHeaderPriceDifference.Text = "Price Difference";
+            this.btnSHeaderPriceDifference.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderChangePercent
+            // btnSHeaderBuyingMarkeValue
             // 
-            this.btnHeaderChangePercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderChangePercent.FlatAppearance.BorderSize = 0;
-            this.btnHeaderChangePercent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderChangePercent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderChangePercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderChangePercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderChangePercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderChangePercent.Location = new System.Drawing.Point(1359, 3);
-            this.btnHeaderChangePercent.Name = "btnHeaderChangePercent";
-            this.btnHeaderChangePercent.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderChangePercent.TabIndex = 15;
-            this.btnHeaderChangePercent.Text = "Change (%)";
-            this.btnHeaderChangePercent.UseVisualStyleBackColor = false;
+            this.btnSHeaderBuyingMarkeValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderBuyingMarkeValue.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderBuyingMarkeValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderBuyingMarkeValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderBuyingMarkeValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderBuyingMarkeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderBuyingMarkeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderBuyingMarkeValue.Location = new System.Drawing.Point(791, 3);
+            this.btnSHeaderBuyingMarkeValue.Name = "btnSHeaderBuyingMarkeValue";
+            this.btnSHeaderBuyingMarkeValue.Size = new System.Drawing.Size(145, 60);
+            this.btnSHeaderBuyingMarkeValue.TabIndex = 10;
+            this.btnSHeaderBuyingMarkeValue.Text = "Buying market value";
+            this.btnSHeaderBuyingMarkeValue.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderPriceDifference
+            // btnSHeaderQuantity
             // 
-            this.btnHeaderPriceDifference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderPriceDifference.FlatAppearance.BorderSize = 0;
-            this.btnHeaderPriceDifference.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderPriceDifference.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderPriceDifference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderPriceDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderPriceDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderPriceDifference.Location = new System.Drawing.Point(755, 3);
-            this.btnHeaderPriceDifference.Name = "btnHeaderPriceDifference";
-            this.btnHeaderPriceDifference.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderPriceDifference.TabIndex = 14;
-            this.btnHeaderPriceDifference.Text = "Price Difference";
-            this.btnHeaderPriceDifference.UseVisualStyleBackColor = false;
+            this.btnSHeaderQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderQuantity.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderQuantity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderQuantity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderQuantity.Location = new System.Drawing.Point(305, 3);
+            this.btnSHeaderQuantity.Name = "btnSHeaderQuantity";
+            this.btnSHeaderQuantity.Size = new System.Drawing.Size(102, 60);
+            this.btnSHeaderQuantity.TabIndex = 17;
+            this.btnSHeaderQuantity.Text = "Quantity";
+            this.btnSHeaderQuantity.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderMarketValueDifference
+            // btnSHeaderDateBought
             // 
-            this.btnHeaderMarketValueDifference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderMarketValueDifference.FlatAppearance.BorderSize = 0;
-            this.btnHeaderMarketValueDifference.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderMarketValueDifference.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderMarketValueDifference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderMarketValueDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderMarketValueDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderMarketValueDifference.Location = new System.Drawing.Point(1208, 3);
-            this.btnHeaderMarketValueDifference.Name = "btnHeaderMarketValueDifference";
-            this.btnHeaderMarketValueDifference.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderMarketValueDifference.TabIndex = 13;
-            this.btnHeaderMarketValueDifference.Text = "Market Value Difference";
-            this.btnHeaderMarketValueDifference.UseVisualStyleBackColor = false;
+            this.btnSHeaderDateBought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderDateBought.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderDateBought.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderDateBought.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderDateBought.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderDateBought.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderDateBought.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderDateBought.Location = new System.Drawing.Point(1471, 3);
+            this.btnSHeaderDateBought.Name = "btnSHeaderDateBought";
+            this.btnSHeaderDateBought.Size = new System.Drawing.Size(125, 60);
+            this.btnSHeaderDateBought.TabIndex = 16;
+            this.btnSHeaderDateBought.Text = "Date Bought";
+            this.btnSHeaderDateBought.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderCurrentMarketValue
+            // btnSHeaderChangePercent
             // 
-            this.btnHeaderCurrentMarketValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderCurrentMarketValue.FlatAppearance.BorderSize = 0;
-            this.btnHeaderCurrentMarketValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderCurrentMarketValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderCurrentMarketValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderCurrentMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderCurrentMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderCurrentMarketValue.Location = new System.Drawing.Point(1057, 3);
-            this.btnHeaderCurrentMarketValue.Name = "btnHeaderCurrentMarketValue";
-            this.btnHeaderCurrentMarketValue.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderCurrentMarketValue.TabIndex = 12;
-            this.btnHeaderCurrentMarketValue.Text = "Current market value";
-            this.btnHeaderCurrentMarketValue.UseVisualStyleBackColor = false;
+            this.btnSHeaderChangePercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderChangePercent.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderChangePercent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderChangePercent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderChangePercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderChangePercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderChangePercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderChangePercent.Location = new System.Drawing.Point(1219, 3);
+            this.btnSHeaderChangePercent.Name = "btnSHeaderChangePercent";
+            this.btnSHeaderChangePercent.Size = new System.Drawing.Size(120, 60);
+            this.btnSHeaderChangePercent.TabIndex = 15;
+            this.btnSHeaderChangePercent.Text = "Change (%)";
+            this.btnSHeaderChangePercent.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderCurrentPrice
+            // btnSHeaderMarketValueDifference
             // 
-            this.btnHeaderCurrentPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderCurrentPrice.FlatAppearance.BorderSize = 0;
-            this.btnHeaderCurrentPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderCurrentPrice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderCurrentPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderCurrentPrice.Location = new System.Drawing.Point(604, 3);
-            this.btnHeaderCurrentPrice.Name = "btnHeaderCurrentPrice";
-            this.btnHeaderCurrentPrice.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderCurrentPrice.TabIndex = 11;
-            this.btnHeaderCurrentPrice.Text = "Current price";
-            this.btnHeaderCurrentPrice.UseVisualStyleBackColor = false;
+            this.btnSHeaderMarketValueDifference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderMarketValueDifference.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderMarketValueDifference.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderMarketValueDifference.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderMarketValueDifference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderMarketValueDifference.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderMarketValueDifference.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderMarketValueDifference.Location = new System.Drawing.Point(1093, 3);
+            this.btnSHeaderMarketValueDifference.Name = "btnSHeaderMarketValueDifference";
+            this.btnSHeaderMarketValueDifference.Size = new System.Drawing.Size(120, 60);
+            this.btnSHeaderMarketValueDifference.TabIndex = 13;
+            this.btnSHeaderMarketValueDifference.Text = "M. V. Difference";
+            this.btnSHeaderMarketValueDifference.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderBuyingMarkeValue
+            // btnSHeaderCurrentMarketValue
             // 
-            this.btnHeaderBuyingMarkeValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderBuyingMarkeValue.FlatAppearance.BorderSize = 0;
-            this.btnHeaderBuyingMarkeValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderBuyingMarkeValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderBuyingMarkeValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderBuyingMarkeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderBuyingMarkeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderBuyingMarkeValue.Location = new System.Drawing.Point(906, 3);
-            this.btnHeaderBuyingMarkeValue.Name = "btnHeaderBuyingMarkeValue";
-            this.btnHeaderBuyingMarkeValue.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderBuyingMarkeValue.TabIndex = 10;
-            this.btnHeaderBuyingMarkeValue.Text = "Buying market value";
-            this.btnHeaderBuyingMarkeValue.UseVisualStyleBackColor = false;
+            this.btnSHeaderCurrentMarketValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderCurrentMarketValue.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderCurrentMarketValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderCurrentMarketValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderCurrentMarketValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderCurrentMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderCurrentMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderCurrentMarketValue.Location = new System.Drawing.Point(942, 3);
+            this.btnSHeaderCurrentMarketValue.Name = "btnSHeaderCurrentMarketValue";
+            this.btnSHeaderCurrentMarketValue.Size = new System.Drawing.Size(145, 60);
+            this.btnSHeaderCurrentMarketValue.TabIndex = 12;
+            this.btnSHeaderCurrentMarketValue.Text = "Current market value";
+            this.btnSHeaderCurrentMarketValue.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderBuyingPrice
+            // btnSHeaderCurrentPrice
             // 
-            this.btnHeaderBuyingPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderBuyingPrice.FlatAppearance.BorderSize = 0;
-            this.btnHeaderBuyingPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderBuyingPrice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderBuyingPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderBuyingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderBuyingPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderBuyingPrice.Location = new System.Drawing.Point(453, 3);
-            this.btnHeaderBuyingPrice.Name = "btnHeaderBuyingPrice";
-            this.btnHeaderBuyingPrice.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderBuyingPrice.TabIndex = 9;
-            this.btnHeaderBuyingPrice.Text = "Buying price";
-            this.btnHeaderBuyingPrice.UseVisualStyleBackColor = false;
+            this.btnSHeaderCurrentPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderCurrentPrice.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderCurrentPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderCurrentPrice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderCurrentPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderCurrentPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderCurrentPrice.Location = new System.Drawing.Point(539, 3);
+            this.btnSHeaderCurrentPrice.Name = "btnSHeaderCurrentPrice";
+            this.btnSHeaderCurrentPrice.Size = new System.Drawing.Size(120, 60);
+            this.btnSHeaderCurrentPrice.TabIndex = 11;
+            this.btnSHeaderCurrentPrice.Text = "Current price";
+            this.btnSHeaderCurrentPrice.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderName
+            // btnSHeaderBuyingPrice
             // 
-            this.btnHeaderName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderName.FlatAppearance.BorderSize = 0;
-            this.btnHeaderName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderName.Location = new System.Drawing.Point(151, 3);
-            this.btnHeaderName.Name = "btnHeaderName";
-            this.btnHeaderName.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderName.TabIndex = 8;
-            this.btnHeaderName.Text = "Name";
-            this.btnHeaderName.UseVisualStyleBackColor = false;
+            this.btnSHeaderBuyingPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderBuyingPrice.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderBuyingPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderBuyingPrice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderBuyingPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderBuyingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderBuyingPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderBuyingPrice.Location = new System.Drawing.Point(413, 3);
+            this.btnSHeaderBuyingPrice.Name = "btnSHeaderBuyingPrice";
+            this.btnSHeaderBuyingPrice.Size = new System.Drawing.Size(120, 60);
+            this.btnSHeaderBuyingPrice.TabIndex = 9;
+            this.btnSHeaderBuyingPrice.Text = "Buying price";
+            this.btnSHeaderBuyingPrice.UseVisualStyleBackColor = false;
             // 
-            // btnHeaderTicker
+            // btnSHeaderName
             // 
-            this.btnHeaderTicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnHeaderTicker.FlatAppearance.BorderSize = 0;
-            this.btnHeaderTicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderTicker.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnHeaderTicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeaderTicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHeaderTicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnHeaderTicker.Location = new System.Drawing.Point(0, 3);
-            this.btnHeaderTicker.Name = "btnHeaderTicker";
-            this.btnHeaderTicker.Size = new System.Drawing.Size(145, 60);
-            this.btnHeaderTicker.TabIndex = 7;
-            this.btnHeaderTicker.Text = "Ticker";
-            this.btnHeaderTicker.UseVisualStyleBackColor = false;
+            this.btnSHeaderName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderName.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderName.Location = new System.Drawing.Point(107, 3);
+            this.btnSHeaderName.Name = "btnSHeaderName";
+            this.btnSHeaderName.Size = new System.Drawing.Size(192, 60);
+            this.btnSHeaderName.TabIndex = 8;
+            this.btnSHeaderName.Text = "Name";
+            this.btnSHeaderName.UseVisualStyleBackColor = false;
+            // 
+            // btnSHeaderTicker
+            // 
+            this.btnSHeaderTicker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSHeaderTicker.FlatAppearance.BorderSize = 0;
+            this.btnSHeaderTicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderTicker.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnSHeaderTicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSHeaderTicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSHeaderTicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnSHeaderTicker.Location = new System.Drawing.Point(1, 3);
+            this.btnSHeaderTicker.Name = "btnSHeaderTicker";
+            this.btnSHeaderTicker.Size = new System.Drawing.Size(100, 60);
+            this.btnSHeaderTicker.TabIndex = 7;
+            this.btnSHeaderTicker.Text = "Ticker";
+            this.btnSHeaderTicker.UseVisualStyleBackColor = false;
+            // 
+            // panelCurrencyExchangeColumns
+            // 
+            this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderCurrencyTo);
+            this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderBuyingMarketValue);
+            this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderQuantity);
+            this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderDateBought);
+            this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderBuyingPrice);
+            this.panelCurrencyExchangeColumns.Controls.Add(this.buttonCEHeaderCurrencyFrom);
+            this.panelCurrencyExchangeColumns.Location = new System.Drawing.Point(24, 628);
+            this.panelCurrencyExchangeColumns.Name = "panelCurrencyExchangeColumns";
+            this.panelCurrencyExchangeColumns.Size = new System.Drawing.Size(837, 66);
+            this.panelCurrencyExchangeColumns.TabIndex = 7;
+            // 
+            // btnCEHeaderBuyingMarketValue
+            // 
+            this.btnCEHeaderBuyingMarketValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCEHeaderBuyingMarketValue.FlatAppearance.BorderSize = 0;
+            this.btnCEHeaderBuyingMarketValue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderBuyingMarketValue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderBuyingMarketValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEHeaderBuyingMarketValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCEHeaderBuyingMarketValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnCEHeaderBuyingMarketValue.Location = new System.Drawing.Point(507, 3);
+            this.btnCEHeaderBuyingMarketValue.Name = "btnCEHeaderBuyingMarketValue";
+            this.btnCEHeaderBuyingMarketValue.Size = new System.Drawing.Size(145, 60);
+            this.btnCEHeaderBuyingMarketValue.TabIndex = 10;
+            this.btnCEHeaderBuyingMarketValue.Text = "Buying market value";
+            this.btnCEHeaderBuyingMarketValue.UseVisualStyleBackColor = false;
+            // 
+            // btnCEHeaderQuantity
+            // 
+            this.btnCEHeaderQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCEHeaderQuantity.FlatAppearance.BorderSize = 0;
+            this.btnCEHeaderQuantity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderQuantity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEHeaderQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCEHeaderQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnCEHeaderQuantity.Location = new System.Drawing.Point(381, 3);
+            this.btnCEHeaderQuantity.Name = "btnCEHeaderQuantity";
+            this.btnCEHeaderQuantity.Size = new System.Drawing.Size(120, 60);
+            this.btnCEHeaderQuantity.TabIndex = 17;
+            this.btnCEHeaderQuantity.Text = "Quantity";
+            this.btnCEHeaderQuantity.UseVisualStyleBackColor = false;
+            // 
+            // btnCEHeaderBuyingPrice
+            // 
+            this.btnCEHeaderBuyingPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCEHeaderBuyingPrice.FlatAppearance.BorderSize = 0;
+            this.btnCEHeaderBuyingPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderBuyingPrice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderBuyingPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEHeaderBuyingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCEHeaderBuyingPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnCEHeaderBuyingPrice.Location = new System.Drawing.Point(255, 3);
+            this.btnCEHeaderBuyingPrice.Name = "btnCEHeaderBuyingPrice";
+            this.btnCEHeaderBuyingPrice.Size = new System.Drawing.Size(120, 60);
+            this.btnCEHeaderBuyingPrice.TabIndex = 9;
+            this.btnCEHeaderBuyingPrice.Text = "Buying price";
+            this.btnCEHeaderBuyingPrice.UseVisualStyleBackColor = false;
+            // 
+            // buttonCEHeaderCurrencyFrom
+            // 
+            this.buttonCEHeaderCurrencyFrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.buttonCEHeaderCurrencyFrom.FlatAppearance.BorderSize = 0;
+            this.buttonCEHeaderCurrencyFrom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.buttonCEHeaderCurrencyFrom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.buttonCEHeaderCurrencyFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCEHeaderCurrencyFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCEHeaderCurrencyFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.buttonCEHeaderCurrencyFrom.Location = new System.Drawing.Point(3, 3);
+            this.buttonCEHeaderCurrencyFrom.Name = "buttonCEHeaderCurrencyFrom";
+            this.buttonCEHeaderCurrencyFrom.Size = new System.Drawing.Size(120, 60);
+            this.buttonCEHeaderCurrencyFrom.TabIndex = 8;
+            this.buttonCEHeaderCurrencyFrom.Text = "Currency from";
+            this.buttonCEHeaderCurrencyFrom.UseVisualStyleBackColor = false;
+            // 
+            // buttonAddCurrency
+            // 
+            this.buttonAddCurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.buttonAddCurrency.FlatAppearance.BorderSize = 0;
+            this.buttonAddCurrency.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.buttonAddCurrency.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.buttonAddCurrency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddCurrency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.buttonAddCurrency.Location = new System.Drawing.Point(446, 14);
+            this.buttonAddCurrency.Name = "buttonAddCurrency";
+            this.buttonAddCurrency.Size = new System.Drawing.Size(181, 67);
+            this.buttonAddCurrency.TabIndex = 8;
+            this.buttonAddCurrency.Text = "Add Currency Exchange";
+            this.buttonAddCurrency.UseVisualStyleBackColor = false;
+            this.buttonAddCurrency.Click += new System.EventHandler(this.OpenAddCurrencyExchangeWindow);
+            // 
+            // btnCEHeaderDateBought
+            // 
+            this.btnCEHeaderDateBought.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCEHeaderDateBought.FlatAppearance.BorderSize = 0;
+            this.btnCEHeaderDateBought.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderDateBought.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderDateBought.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEHeaderDateBought.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCEHeaderDateBought.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnCEHeaderDateBought.Location = new System.Drawing.Point(658, 3);
+            this.btnCEHeaderDateBought.Name = "btnCEHeaderDateBought";
+            this.btnCEHeaderDateBought.Size = new System.Drawing.Size(125, 60);
+            this.btnCEHeaderDateBought.TabIndex = 16;
+            this.btnCEHeaderDateBought.Text = "Date Bought";
+            this.btnCEHeaderDateBought.UseVisualStyleBackColor = false;
+            // 
+            // btnCEHeaderCurrencyTo
+            // 
+            this.btnCEHeaderCurrencyTo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCEHeaderCurrencyTo.FlatAppearance.BorderSize = 0;
+            this.btnCEHeaderCurrencyTo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderCurrencyTo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCEHeaderCurrencyTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEHeaderCurrencyTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCEHeaderCurrencyTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnCEHeaderCurrencyTo.Location = new System.Drawing.Point(129, 3);
+            this.btnCEHeaderCurrencyTo.Name = "btnCEHeaderCurrencyTo";
+            this.btnCEHeaderCurrencyTo.Size = new System.Drawing.Size(120, 60);
+            this.btnCEHeaderCurrencyTo.TabIndex = 19;
+            this.btnCEHeaderCurrencyTo.Text = "Currency to";
+            this.btnCEHeaderCurrencyTo.UseVisualStyleBackColor = false;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(2024, 548);
-            this.Controls.Add(this.panelColumnns);
-            this.Controls.Add(this.panelCurrencies);
+            this.ClientSize = new System.Drawing.Size(1786, 922);
+            this.Controls.Add(this.buttonAddCurrency);
+            this.Controls.Add(this.panelCurrencyExchangeColumns);
+            this.Controls.Add(this.panelCurrencyExhanges);
+            this.Controls.Add(this.panelStockColumns);
             this.Controls.Add(this.panelStocks);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnAddStock);
@@ -340,7 +495,8 @@ namespace InvestmentChecker2
             this.Text = "Investment Checker 2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindowClose);
             this.Load += new System.EventHandler(this.MainWindowLoad);
-            this.panelColumnns.ResumeLayout(false);
+            this.panelStockColumns.ResumeLayout(false);
+            this.panelCurrencyExchangeColumns.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -352,19 +508,28 @@ namespace InvestmentChecker2
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Panel panelStocks;
-        private System.Windows.Forms.Panel panelCurrencies;
-        private System.Windows.Forms.Panel panelColumnns;
-        private System.Windows.Forms.Button btnHeaderCurrentMarketValue;
-        private System.Windows.Forms.Button btnHeaderCurrentPrice;
-        private System.Windows.Forms.Button btnHeaderBuyingMarkeValue;
-        private System.Windows.Forms.Button btnHeaderBuyingPrice;
-        private System.Windows.Forms.Button btnHeaderName;
-        private System.Windows.Forms.Button btnHeaderTicker;
-        private System.Windows.Forms.Button btnHeaderPriceDifference;
-        private System.Windows.Forms.Button btnHeaderMarketValueDifference;
-        private System.Windows.Forms.Button btnHeaderChangePercent;
-        private System.Windows.Forms.Button btnHeaderDateBought;
-        private System.Windows.Forms.Button btnHeaderQuantity;
+        private System.Windows.Forms.Panel panelCurrencyExhanges;
+        private System.Windows.Forms.Panel panelStockColumns;
+        private System.Windows.Forms.Button btnSHeaderCurrentMarketValue;
+        private System.Windows.Forms.Button btnSHeaderCurrentPrice;
+        private System.Windows.Forms.Button btnSHeaderBuyingMarkeValue;
+        private System.Windows.Forms.Button btnSHeaderBuyingPrice;
+        private System.Windows.Forms.Button btnSHeaderName;
+        private System.Windows.Forms.Button btnSHeaderTicker;
+        private System.Windows.Forms.Button btnSHeaderPriceDifference;
+        private System.Windows.Forms.Button btnSHeaderMarketValueDifference;
+        private System.Windows.Forms.Button btnSHeaderChangePercent;
+        private System.Windows.Forms.Button btnSHeaderDateBought;
+        private System.Windows.Forms.Button btnSHeaderQuantity;
+        private System.Windows.Forms.Button btnSHeaderCurrency;
+        private System.Windows.Forms.Panel panelCurrencyExchangeColumns;
+        private System.Windows.Forms.Button btnCEHeaderBuyingMarketValue;
+        private System.Windows.Forms.Button btnCEHeaderQuantity;
+        private System.Windows.Forms.Button btnCEHeaderDateBought;
+        private System.Windows.Forms.Button btnCEHeaderBuyingPrice;
+        private System.Windows.Forms.Button buttonCEHeaderCurrencyFrom;
+        private System.Windows.Forms.Button buttonAddCurrency;
+        private System.Windows.Forms.Button btnCEHeaderCurrencyTo;
     }
 }
 

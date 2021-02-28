@@ -21,6 +21,7 @@ namespace InvestmentChecker2
 
         // StockRow controls
         List<StockRow> stockRows = new List<StockRow>();
+        List<CurrencyExchangeRow> currencyExchangeRows = new List<CurrencyExchangeRow>();
         
         public MainWindow()
         {
@@ -61,6 +62,26 @@ namespace InvestmentChecker2
             }
             App.NEXT_STOCK_ID++;
         }
+        private void DisplayCurrentCurrencyExchanges()
+        {
+            foreach (CurrencyExchangeRow currencyExchangeRow in currencyExchangeRows)
+            {
+                panelStocks.Controls.Remove(currencyExchangeRow);
+            }
+
+            for (int i = 0; i < App.currentCurrencyExchanges.Count; i++)
+            {
+                CurrencyExchange ce = App.currentCurrencyExchanges[i];
+                CurrencyExchangeRow cer = new CurrencyExchangeRow(ce);
+                cer.Top = i * STOCK_ROW_HEIGHT;
+
+                currencyExchangeRows.Add(cer);
+                panelCurrencyExhanges.Controls.Add(cer);
+
+                App.NEXT_CURRENCY_EXCHANGE_ID = ce.id;
+            }
+            App.NEXT_CURRENCY_EXCHANGE_ID++;
+        }
 
         private void onProfileChange(object sender, EventArgs e)
         {
@@ -70,8 +91,10 @@ namespace InvestmentChecker2
             }
 
             App.currentProfile = comboBoxSelectProfile.SelectedValue.ToString();
-            App.ReadStocksFromProfile();
+            App.ReadStocksForProfile();
+            App.ReadCurrencyExchangesForProfile();
             DisplayCurrentStocks();
+            DisplayCurrentCurrencyExchanges();
         }
 
         // Open new windows
@@ -100,6 +123,12 @@ namespace InvestmentChecker2
             {
                 App.UpdateStocksCSV();
             }
+        }
+
+        private void OpenAddCurrencyExchangeWindow(object sender, EventArgs e)
+        {
+            AddCurrencyExchangeWindow window = new AddCurrencyExchangeWindow();
+            window.Show();
         }
     }
 }

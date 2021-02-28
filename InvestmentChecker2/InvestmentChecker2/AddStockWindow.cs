@@ -14,11 +14,13 @@ namespace InvestmentChecker2
     public partial class AddStockWindow : Form
     {
         string ticker;
+        string currency;
         string profileToAddTo;
-        public AddStockWindow(string ticker, string defaultName)
+        public AddStockWindow(string ticker, string defaultName, string currency)
         {
             InitializeComponent();
             this.ticker = ticker;
+            this.currency = currency;
             profileToAddTo = App.currentProfile;
 
             labelFoundTicker.Text = ticker;
@@ -34,7 +36,7 @@ namespace InvestmentChecker2
                 // Save the stock
                 using (StreamWriter sw = new StreamWriter($"{App.GetStocksFolderPathForProfile(profileToAddTo)}/stocks.csv", append: true))
                 {
-                    string[] stockInformation = { App.NEXT_STOCK_ID.ToString(), ticker, textInputName.Text, textInputQuantity.Text, textInputBuyingPrice.Text, textInputDateBought.Text };
+                    string[] stockInformation = { App.NEXT_STOCK_ID.ToString(), ticker, textInputName.Text, textInputQuantity.Text, textInputBuyingPrice.Text, currency, textInputDateBought.Text };
                     sw.WriteLine(App.CreateCSVLine(stockInformation));
                 }
                 App.NEXT_STOCK_ID++;
