@@ -66,7 +66,7 @@ namespace InvestmentChecker2
         {
             foreach (CurrencyExchangeRow currencyExchangeRow in currencyExchangeRows)
             {
-                panelStocks.Controls.Remove(currencyExchangeRow);
+                panelCurrencyExhanges.Controls.Remove(currencyExchangeRow);
             }
 
             for (int i = 0; i < App.currentCurrencyExchanges.Count; i++)
@@ -88,6 +88,11 @@ namespace InvestmentChecker2
             if (App.currentProfile != null && App.stocksToBeDeleted)
             {
                 App.UpdateStocksCSV();
+            }
+
+            if (App.currentProfile != null && App.currencyExchangeToBeDeleted)
+            {
+                App.UpdateCurrencyExchangesCSV();
             }
 
             App.currentProfile = comboBoxSelectProfile.SelectedValue.ToString();
@@ -123,11 +128,22 @@ namespace InvestmentChecker2
             {
                 App.UpdateStocksCSV();
             }
+
+            if (App.currencyExchangeToBeDeleted)
+            {
+                App.UpdateCurrencyExchangesCSV();
+            }
         }
 
         private void OpenAddCurrencyExchangeWindow(object sender, EventArgs e)
         {
             AddCurrencyExchangeWindow window = new AddCurrencyExchangeWindow();
+            window.Show();
+        }
+
+        private void OpenProfileSummaryWindow(object sender, EventArgs e)
+        {
+            ProfileSummaryWindow window = new ProfileSummaryWindow(App.currentStocks, App.currentCurrencyExchanges);
             window.Show();
         }
     }

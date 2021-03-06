@@ -12,15 +12,36 @@ namespace InvestmentChecker2
 {
     public partial class CurrencyExchangeRow : UserControl
     {
+        int id;
         public CurrencyExchangeRow(CurrencyExchange ce)
         {
             InitializeComponent();
+            id = ce.id;
+
             labelCurrencyFrom.Text = ce.currencyFrom;
             labelCurrencyTo.Text = ce.currencyTo;
             labelQuantity.Text = ce.quantity.ToString();
             labelBuyingPrice.Text = ce.buyingPrice.ToString();
             labelBuyingMarketValue.Text = ce.BuyingMarketValue.ToString();
             labelDateBought.Text = ce.dateBought.ToShortDateString();
+        }
+
+        private void RemoveCurrencyExchange(object sender, EventArgs e)
+        {
+            // Delete from the stock's list
+            // Find the index based on the stock's id
+            int foundIndex = 0;
+            while (id != App.currentCurrencyExchanges[foundIndex].id)
+            {
+                foundIndex++;
+            }
+            App.currentCurrencyExchanges.RemoveAt(foundIndex);
+
+            // Remove the control
+            Parent.Controls.Remove(this);
+
+            // Schedule for deletion in stocks.csv
+            App.currencyExchangeToBeDeleted = true;
         }
     }
 }

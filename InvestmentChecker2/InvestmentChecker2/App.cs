@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,12 @@ namespace InvestmentChecker2
     {
         // GLOBAL CONSTANTS
         // Display
-        public static int NUMBER_OF_FRAC_DIGITS = 3;
+        public static int NUMBER_OF_FRAC_DIGITS = 2;
+        public static string NUMBER_DISPLAY_FORMAT = "#,##0.##";
+
+        // Colors
+        public static Color inProfit = Color.FromArgb(255, 53, 255, 205);
+        public static Color inLoss = Color.FromArgb(255, 255, 73, 92);
 
         // Folder paths
         public static string PROFILES_FOLDER_PATH = "./profiles/";
@@ -48,6 +54,7 @@ namespace InvestmentChecker2
         // Profiles
         public static BindingList<string> profileNames = new BindingList<string>();
         public static string currentProfile;
+        public static string currentProfileMainCurrency = "HUF";
 
         // Stocks
         public static List<Stock> currentStocks = new List<Stock>();
@@ -163,13 +170,24 @@ namespace InvestmentChecker2
         // Rewrites the current profile's stocks.csv, exluding the stocks which were scheduled for deletion
         public static void UpdateStocksCSV()
         {
-            using (StreamWriter sr = new StreamWriter($"{GetStocksFolderPath()}/stocks.csv"))
+            using (StreamWriter sw = new StreamWriter($"{GetStocksFolderPath()}/stocks.csv"))
             {
                 foreach (Stock stock in currentStocks)
                 {
-                    sr.WriteLine(CreateCSVLine(stock.GetOutputArray()));
+                    sw.WriteLine(CreateCSVLine(stock.GetOutputArray()));
                 }
                 stocksToBeDeleted = false;
+            }
+        }
+
+        public static void UpdateCurrencyExchangesCSV()
+        {
+            using (StreamWriter sw = new StreamWriter($"{GetCurrencyExchangesFolderPath()}/currency-exchanges.csv"))
+            {
+                foreach (CurrencyExchange ce in currentCurrencyExchanges)
+                {
+                    sw.WriteLine(CreateCSVLine(ce.GetOutputArray()));
+                }
             }
         }
 
@@ -183,6 +201,10 @@ namespace InvestmentChecker2
             line.Remove(line.Length - 1); // Remove extra delimiter
 
             return line;
+        }
+        public static double GetPercent(double initial, double current)
+        {
+            return ((current / initial) - 1) * 100;
         }
 
         // Shows the error window with an error message as parameter

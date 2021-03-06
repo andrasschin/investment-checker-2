@@ -31,5 +31,11 @@ namespace InvestmentChecker2
             this.buyingPrice = buyingPrice;
             this.dateBought = dateBought;
         }
+
+        public string[] GetOutputArray()
+        {
+            string[] output = { id.ToString(), currencyFrom, currencyTo, quantity.ToString(), buyingPrice.ToString(), dateBought.ToString() };
+            return output;
+        }
     }
 }

@@ -29,8 +29,8 @@ namespace InvestmentChecker2
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.buttonDetails = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnDetails = new System.Windows.Forms.Button();
             this.labelTicker = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelQuantity = new System.Windows.Forms.Label();
@@ -45,34 +45,34 @@ namespace InvestmentChecker2
             this.labelCurrency = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // buttonRemove
+            // btnRemove
             // 
-            this.buttonRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.buttonRemove.FlatAppearance.BorderSize = 0;
-            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRemove.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonRemove.Location = new System.Drawing.Point(1680, 15);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(32, 30);
-            this.buttonRemove.TabIndex = 2;
-            this.buttonRemove.Text = "X";
-            this.buttonRemove.UseVisualStyleBackColor = false;
-            this.buttonRemove.Click += new System.EventHandler(this.RemoveStock);
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemove.ForeColor = System.Drawing.Color.Maroon;
+            this.btnRemove.Location = new System.Drawing.Point(1680, 15);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(32, 30);
+            this.btnRemove.TabIndex = 2;
+            this.btnRemove.Text = "X";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.RemoveStock);
             // 
-            // buttonDetails
+            // btnDetails
             // 
-            this.buttonDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.buttonDetails.FlatAppearance.BorderSize = 0;
-            this.buttonDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.buttonDetails.Location = new System.Drawing.Point(1642, 15);
-            this.buttonDetails.Name = "buttonDetails";
-            this.buttonDetails.Size = new System.Drawing.Size(32, 30);
-            this.buttonDetails.TabIndex = 3;
-            this.buttonDetails.Text = "S";
-            this.buttonDetails.UseVisualStyleBackColor = false;
+            this.btnDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnDetails.FlatAppearance.BorderSize = 0;
+            this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnDetails.Location = new System.Drawing.Point(1642, 15);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(32, 30);
+            this.btnDetails.TabIndex = 3;
+            this.btnDetails.Text = "D";
+            this.btnDetails.UseVisualStyleBackColor = false;
             // 
             // labelTicker
             // 
@@ -223,19 +223,18 @@ namespace InvestmentChecker2
             this.Controls.Add(this.labelQuantity);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelTicker);
-            this.Controls.Add(this.buttonDetails);
-            this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.btnDetails);
+            this.Controls.Add(this.btnRemove);
             this.Name = "StockRow";
             this.Size = new System.Drawing.Size(1734, 65);
-            this.Load += new System.EventHandler(this.StockRowLoad);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.Button buttonDetails;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.Label labelTicker;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelQuantity;

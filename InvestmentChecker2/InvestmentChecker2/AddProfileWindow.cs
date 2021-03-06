@@ -26,10 +26,10 @@ namespace InvestmentChecker2
                 Directory.CreateDirectory(newProfilePath);
                 Directory.CreateDirectory(newProfilePath + "/stocks");
                 Directory.CreateDirectory(newProfilePath + "/history");
-                File.Create(newProfilePath + "/stocks/stocks.csv");
+                File.Create(newProfilePath + "/stocks/stocks.csv").Close();
 
                 Directory.CreateDirectory(newProfilePath + "/currency-exchanges");
-                File.Create(newProfilePath + "/currency-exchanges/currency-exchanges.csv");
+                File.Create(newProfilePath + "/currency-exchanges/currency-exchanges.csv").Close();
                 
                 // Add to existing profiles
                 App.profileNames.Add(profileName);

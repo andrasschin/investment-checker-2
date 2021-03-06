@@ -79,6 +79,18 @@
       <DependentUpon>ErrorWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
+    <Compile Include="GainsAndLossesRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GainsAndLossesRow.Designer.cs">
+      <DependentUpon>GainsAndLossesRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSummaryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfileSummaryWindow.Designer.cs">
+      <DependentUpon>ProfileSummaryWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchStockWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     <Compile Include="StockRow.Designer.cs">
       <DependentUpon>StockRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="SummaryRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SummaryRow.Designer.cs">
+      <DependentUpon>SummaryRow.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCurrencyExchangeWindow.resx">
       <DependentUpon>AddCurrencyExchangeWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorWindow.resx">
       <DependentUpon>ErrorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GainsAndLossesRow.resx">
+      <DependentUpon>GainsAndLossesRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileSummaryWindow.resx">
+      <DependentUpon>ProfileSummaryWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchStockWindow.resx">
       <DependentUpon>SearchStockWindow.cs</DependentUpon>
@@ -141,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockRow.resx">
       <DependentUpon>StockRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryRow.resx">
+      <DependentUpon>SummaryRow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

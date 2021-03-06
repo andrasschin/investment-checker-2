@@ -35,6 +35,8 @@ namespace InvestmentChecker2
             this.labelBuyingPrice = new System.Windows.Forms.Label();
             this.labelBuyingMarketValue = new System.Windows.Forms.Label();
             this.labelDateBought = new System.Windows.Forms.Label();
+            this.btnDetails = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelCurrencyFrom
@@ -98,16 +100,47 @@ namespace InvestmentChecker2
             this.labelDateBought.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.labelDateBought.Location = new System.Drawing.Point(653, 0);
             this.labelDateBought.Name = "labelDateBought";
-            this.labelDateBought.Size = new System.Drawing.Size(125, 60);
+            this.labelDateBought.Size = new System.Drawing.Size(172, 60);
             this.labelDateBought.TabIndex = 10;
             this.labelDateBought.Text = "label5";
             this.labelDateBought.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnDetails.FlatAppearance.BorderSize = 0;
+            this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnDetails.Location = new System.Drawing.Point(831, 15);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(32, 30);
+            this.btnDetails.TabIndex = 12;
+            this.btnDetails.Text = "D";
+            this.btnDetails.UseVisualStyleBackColor = false;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemove.ForeColor = System.Drawing.Color.Maroon;
+            this.btnRemove.Location = new System.Drawing.Point(869, 15);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(32, 30);
+            this.btnRemove.TabIndex = 11;
+            this.btnRemove.Text = "X";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.RemoveCurrencyExchange);
             // 
             // CurrencyExchangeRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Controls.Add(this.btnDetails);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.labelDateBought);
             this.Controls.Add(this.labelBuyingMarketValue);
             this.Controls.Add(this.labelBuyingPrice);
@@ -115,7 +148,7 @@ namespace InvestmentChecker2
             this.Controls.Add(this.labelCurrencyTo);
             this.Controls.Add(this.labelCurrencyFrom);
             this.Name = "CurrencyExchangeRow";
-            this.Size = new System.Drawing.Size(786, 65);
+            this.Size = new System.Drawing.Size(920, 65);
             this.ResumeLayout(false);
 
         }
@@ -128,5 +161,7 @@ namespace InvestmentChecker2
         private System.Windows.Forms.Label labelBuyingPrice;
         private System.Windows.Forms.Label labelBuyingMarketValue;
         private System.Windows.Forms.Label labelDateBought;
+        private System.Windows.Forms.Button btnDetails;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

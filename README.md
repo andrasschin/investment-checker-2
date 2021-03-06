@@ -22,3 +22,10 @@ Link to the previous version of Investment Checker (written in Python): [Investm
 - Summary window including all profiles
 - Main currency to convert everything
 - Send email when stock price hits a value
+
+- Profile class for DRY code (updateCSV, readCSV ...)
+- Better form validations
+- ShowError form: responsive design!
+- Delete profile
+- Ticker uppercase
+- Címke alapján megjeleníteni summaryben az egyes win loset forintban

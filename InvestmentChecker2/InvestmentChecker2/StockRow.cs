@@ -15,9 +15,6 @@ namespace InvestmentChecker2
         int id;
         int fracDigits;
 
-        Color inProfit = Color.FromArgb(255, 53, 255, 205);
-        Color inLoss = Color.FromArgb(255, 255, 73, 92);
-
         private double priceDifference;
 
         public double PriceDifference
@@ -48,15 +45,15 @@ namespace InvestmentChecker2
             // Might not be the best solution
             if (stock.PriceDifference > 0)
             {
-                labelPriceDifference.ForeColor = inProfit;
-                labelMarketValueDifference.ForeColor = inProfit;
-                labelChangePercent.ForeColor = inProfit;
+                labelPriceDifference.ForeColor = App.inProfit;
+                labelMarketValueDifference.ForeColor = App.inProfit;
+                labelChangePercent.ForeColor = App.inProfit;
             }
             else if (stock.PriceDifference < 0)
             {
-                labelPriceDifference.ForeColor = inLoss;
-                labelMarketValueDifference.ForeColor = inLoss;
-                labelChangePercent.ForeColor = inLoss;
+                labelPriceDifference.ForeColor = App.inLoss;
+                labelMarketValueDifference.ForeColor = App.inLoss;
+                labelChangePercent.ForeColor = App.inLoss;
             }
 
         }
@@ -77,11 +74,6 @@ namespace InvestmentChecker2
 
             // Schedule for deletion in stocks.csv
             App.stocksToBeDeleted = true;
-
-        }
-
-        private void StockRowLoad(object sender, EventArgs e)
-        {
 
         }
     }
