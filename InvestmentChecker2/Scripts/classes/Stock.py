@@ -19,12 +19,7 @@ class Stock:
             self.name = data["shortName"]
             self.current_price = data["regularMarketPrice"]
             self.currency = data["currency"]
-
-            self.found = True
         except:
-            self.name = "NOT FOUND"
-            self.current_price = "NOT FOUND"
-            self.currency = "NOT FOUND"
-
-            self.found = False
-        
+            self.name = -1
+            self.current_price = -1
+            self.currency = -1

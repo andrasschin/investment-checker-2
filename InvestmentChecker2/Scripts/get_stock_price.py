@@ -1,7 +1,13 @@
 from classes.Stock import Stock
 import sys
 
-ticker = sys.argv[1]
-stock = Stock(ticker)
-print(stock.found)
-print(stock.get_stock_price())
+tickers = iter(sys.argv)
+next(tickers, None)
+
+output = []
+
+for ticker in tickers:
+    stock = Stock(ticker)
+    output.append(str(stock.get_stock_price()))
+
+print(" ".join(output))

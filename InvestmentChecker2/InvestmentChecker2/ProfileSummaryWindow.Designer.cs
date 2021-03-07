@@ -45,7 +45,7 @@ namespace InvestmentChecker2
             this.panelOverall = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.labelChange = new System.Windows.Forms.Label();
             this.panelGainsAndLosses = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -217,16 +217,16 @@ namespace InvestmentChecker2
             this.label19.Text = "Type";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label20
+            // labelChange
             // 
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.label20.Location = new System.Drawing.Point(1057, 93);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(200, 55);
-            this.label20.TabIndex = 25;
-            this.label20.Text = "Change";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelChange.Location = new System.Drawing.Point(1057, 93);
+            this.labelChange.Name = "labelChange";
+            this.labelChange.Size = new System.Drawing.Size(200, 55);
+            this.labelChange.TabIndex = 25;
+            this.labelChange.Text = "Change";
+            this.labelChange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelGainsAndLosses
             // 
@@ -243,7 +243,7 @@ namespace InvestmentChecker2
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1359, 787);
             this.Controls.Add(this.panelGainsAndLosses);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.labelChange);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.panelOverall);
@@ -285,7 +285,7 @@ namespace InvestmentChecker2
         private System.Windows.Forms.Panel panelOverall;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label labelChange;
         private System.Windows.Forms.Panel panelGainsAndLosses;
     }
 }

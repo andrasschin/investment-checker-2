@@ -12,8 +12,8 @@ namespace InvestmentChecker2
 {
     public partial class StockRow : UserControl
     {
-        int id;
         int fracDigits;
+        Stock stock;
 
         private double priceDifference;
 
@@ -23,47 +23,55 @@ namespace InvestmentChecker2
             set { priceDifference = value; }
         }
 
+        private double currentPrice;
+
+        public double CurrentPrice
+        {
+            get { return currentPrice; }
+            set { 
+                currentPrice = value;
+                labelCurrentPrice.Text = Math.Round(currentPrice, fracDigits).ToString();
+                labelPriceDifference.Text = Math.Round(stock.PriceDifference, fracDigits).ToString();
+                labelBuyingMarketValue.Text = stock.BuyingMarketValue.ToString();
+                labelCurrentMarketValue.Text = Math.Round(stock.CurrentMarketValue, fracDigits).ToString();
+                labelMarketValueDifference.Text = Math.Round(stock.MarketValueDifference, fracDigits).ToString();
+                labelChangePercent.Text = Math.Round(stock.ChangePercent, fracDigits).ToString() + "%";
+
+                if (stock.PriceDifference > 0)
+                {
+                    labelPriceDifference.ForeColor = App.inProfit;
+                    labelMarketValueDifference.ForeColor = App.inProfit;
+                    labelChangePercent.ForeColor = App.inProfit;
+                }
+                else if (stock.PriceDifference < 0)
+                {
+                    labelPriceDifference.ForeColor = App.inLoss;
+                    labelMarketValueDifference.ForeColor = App.inLoss;
+                    labelChangePercent.ForeColor = App.inLoss;
+                }
+            }
+        }
+
+
         public StockRow(Stock stock)
         {
             InitializeComponent();
-            id = stock.id;
+            this.stock = stock;
             fracDigits = App.NUMBER_OF_FRAC_DIGITS;
 
             labelTicker.Text = stock.ticker;
             labelName.Text = stock.name;
             labelQuantity.Text = stock.quantity.ToString();
             labelBuyingPrice.Text = stock.buyingPrice.ToString();
-            labelCurrentPrice.Text = Math.Round(stock.CurrentPrice, fracDigits).ToString();
-            labelPriceDifference.Text = Math.Round(stock.PriceDifference, fracDigits).ToString();
-            labelBuyingMarketValue.Text = stock.BuyingMarketValue.ToString();
-            labelCurrentMarketValue.Text = Math.Round(stock.CurrentMarketValue, fracDigits).ToString();
-            labelMarketValueDifference.Text = Math.Round(stock.MarketValueDifference, fracDigits).ToString();
-            labelChangePercent.Text = Math.Round(stock.ChangePercent, fracDigits).ToString() + "%";
             labelCurrency.Text = stock.currency;
             labelDateBought.Text = stock.dateBought.ToShortDateString().ToString();
-
-            // Might not be the best solution
-            if (stock.PriceDifference > 0)
-            {
-                labelPriceDifference.ForeColor = App.inProfit;
-                labelMarketValueDifference.ForeColor = App.inProfit;
-                labelChangePercent.ForeColor = App.inProfit;
-            }
-            else if (stock.PriceDifference < 0)
-            {
-                labelPriceDifference.ForeColor = App.inLoss;
-                labelMarketValueDifference.ForeColor = App.inLoss;
-                labelChangePercent.ForeColor = App.inLoss;
-            }
-
         }
-
         private void RemoveStock(object sender, EventArgs e)
         {
             // Delete from the stock's list
             // Find the index based on the stock's id
             int foundIndex = 0;
-            while (id != App.currentStocks[foundIndex].id)
+            while (stock.id != App.currentStocks[foundIndex].id)
             {
                 foundIndex++;
             }

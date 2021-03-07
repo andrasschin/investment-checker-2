@@ -14,19 +14,17 @@ namespace InvestmentChecker2
     {
         bool stockExists = false;
         
-        private string foundTicker;
-
-        public string FoundTicker
+        private string searchedTicker;
+        public string SearchedTicker
         {
-            get { return foundTicker; }
+            get { return searchedTicker; }
             set {
-                foundTicker = value;
-                labelFoundTicker.Text = value;
+                searchedTicker = value;
+                labelSearchedTicker.Text = value;
             }
         }
 
         private string foundName;
-
         public string FoundName
         {
             get { return foundName; }
@@ -37,7 +35,6 @@ namespace InvestmentChecker2
         }
 
         private string foundCurrentPrice;
-
         public string FoundCurrentPrice
         {
             get { return foundCurrentPrice; }
@@ -48,7 +45,6 @@ namespace InvestmentChecker2
         }
 
         private string foundCurrency;
-
         public string FoundCurrency
         {
             get { return foundCurrency; }
@@ -69,7 +65,7 @@ namespace InvestmentChecker2
         {
             if (stockExists)
             {
-                AddStockWindow window = new AddStockWindow(FoundTicker, FoundName, FoundCurrency);
+                AddStockWindow window = new AddStockWindow(SearchedTicker, FoundName, FoundCurrency);
                 window.Show();
                 Close();
             } else
@@ -80,26 +76,27 @@ namespace InvestmentChecker2
 
         private void SearchStock(object sender, EventArgs e)
         {
-            string ticker = textInputTicker.Text;
-            string[] result = App.RunScript(App.GET_STOCK_INFO_SCRIPT_PATH, ticker);
+            string ticker = textInputTicker.Text.ToUpper();
+            string[] result = App.RunScript(App.GET_STOCK_INFO_SCRIPT_PATH, ticker).Split(';');
 
             // Check if we have a valid stock
-            if (result[0] == "True")
-            {
-                stockExists = true;
-                btnOpenAddStockWindow.ForeColor = Color.FromArgb(255, 232, 232, 232);
-            } else
+            if (result[2] == "-1")
             {
                 stockExists = false;
+                SearchedTicker = result[0];
+                FoundName = "Not found";
+                FoundCurrentPrice = "Not found";
+                FoundCurrency = "Not found";
                 btnOpenAddStockWindow.ForeColor = Color.FromArgb(255, 160, 160, 160);
+            } else
+            {
+                stockExists = true;
+                SearchedTicker = result[0];
+                FoundName = result[1];
+                FoundCurrentPrice = result[2];
+                FoundCurrency = result[3];
+                btnOpenAddStockWindow.ForeColor = Color.FromArgb(255, 232, 232, 232);
             }
-
-            // Save and display the returned information
-            string[] stockInformation = result[1].Split(App.PYTHON_OUTPUT_DELIMITER);
-            FoundTicker = stockInformation[0];
-            FoundName = stockInformation[1];
-            FoundCurrentPrice = stockInformation[2];
-            FoundCurrency = stockInformation[3];
         }
     }
 }

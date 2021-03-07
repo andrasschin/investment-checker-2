@@ -21,12 +21,11 @@ namespace InvestmentChecker2
         public double CurrentPrice
         {
             get
-            {
-                string[] res = App.RunScript(App.GET_STOCK_PRICE_SCRIPT_PATH, ticker);
-                currentPrice = double.Parse(res[1], CultureInfo.InvariantCulture);
-                return currentPrice;
+            { return currentPrice; }
+            set { 
+                currentPrice = value;
+                stockRow.CurrentPrice = value;
             }
-            set { currentPrice = value; }
         }
         public double BuyingMarketValue
         {
@@ -58,9 +57,11 @@ namespace InvestmentChecker2
         }
         public double ChangePercent
         {
-            get { return ((currentPrice / buyingPrice) * 100) - 100; }
+            get { return App.GetPercent(buyingPrice, currentPrice); }
             set { }
         }
+
+        public StockRow stockRow;
 
         public Stock(int id, string ticker, string name, double buyingPrice, int quantity, string currency, DateTime dateBought)
         {
@@ -75,7 +76,7 @@ namespace InvestmentChecker2
 
         public string[] GetOutputArray()
         {
-            string[] output = { id.ToString(), ticker, name, buyingPrice.ToString(), quantity.ToString(), dateBought.ToShortDateString().ToString() };
+            string[] output = { id.ToString(), ticker, name, quantity.ToString(), buyingPrice.ToString(), dateBought.ToShortDateString().ToString() };
             return output;
         }
     }

@@ -20,10 +20,10 @@ namespace InvestmentChecker2
             labelCurrentCapitalValue.Text = currentValue.ToString(App.NUMBER_DISPLAY_FORMAT);
 
             double change = currentValue - initialValue;
-            labelChange.Text = change.ToString(App.NUMBER_DISPLAY_FORMAT);
+            labelChange.Text = change.ToString(App.NUMBER_DISPLAY_FORMAT) + "%";
 
             double changePercent = App.GetPercent(initialValue, currentValue);
-            labelChangePercent.Text = changePercent.ToString(App.NUMBER_DISPLAY_FORMAT);
+            labelChangePercent.Text = changePercent.ToString(App.NUMBER_DISPLAY_FORMAT) + "%";
 
             if (currentValue > initialValue)
             {

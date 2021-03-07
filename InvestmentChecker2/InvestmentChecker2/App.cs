@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -131,6 +132,16 @@ namespace InvestmentChecker2
                 ShowError(ex.Message);
             }
         }
+        public static void GetCurrentPricesForCurrentStocks()
+        {
+            // Are there order issues?
+            string[] tickers = currentStocks.Select(stock => stock.ticker).ToArray();
+            string[] res = RunScript(GET_STOCK_PRICE_SCRIPT_PATH, string.Join(" ", tickers)).Split();
+            for (int i = 0; i < tickers.Length; i++)
+            {
+                currentStocks[i].CurrentPrice = double.Parse(res[i], CultureInfo.InvariantCulture);
+            }
+        }
         public static void ReadCurrencyExchangesForProfile()
         {
             currentCurrencyExchanges.Clear();
@@ -213,21 +224,22 @@ namespace InvestmentChecker2
             ErrorWindow window = new ErrorWindow(errorMessage);
             window.Show();
         }
-        public static string[] RunScript(string scriptPath, string args)
+
+        public static string RunScript(string scriptPath, string args)
         {
+            string result = "";
+
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = pyexe;
             start.Arguments = $"{scriptPath} {args}";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = true;
-            string[] result = new string[2];
             using (Process process = Process.Start(start))
             {
                 using (StreamReader reader = process.StandardOutput)
                 {
-                    result[0] = reader.ReadLine(); // boolean whether the stock has been found or not
-                    result[1] = reader.ReadLine(); // stock information
+                    result = reader.ReadLine();
                 }
             }
             return result;

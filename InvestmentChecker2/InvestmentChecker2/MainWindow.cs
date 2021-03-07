@@ -18,6 +18,8 @@ namespace InvestmentChecker2
         // Constants
         int STOCK_ROW_HEIGHT = 65;
         int STOCK_ROW_LEFT_MARGIN = 5;
+        Color oddRow = Color.FromArgb(255, 24, 24, 24);
+        Color evenRow = Color.FromArgb(255, 32, 32, 32);
 
         // StockRow controls
         List<StockRow> stockRows = new List<StockRow>();
@@ -32,7 +34,7 @@ namespace InvestmentChecker2
 
         private void MainWindowLoad(object sender, EventArgs e)
         {
-            DisplayCurrentStocks();
+            
         }
 
         private void DisplayCurrentStocks()
@@ -50,8 +52,11 @@ namespace InvestmentChecker2
             {
                 Stock stock = App.currentStocks[i];
                 StockRow stockRow = new StockRow(stock);
+                stock.stockRow = stockRow;
+
                 stockRow.Top = i * STOCK_ROW_HEIGHT;
                 stockRow.Left = STOCK_ROW_LEFT_MARGIN;
+                stockRow.BackColor = i % 2 == 0 ? evenRow : oddRow;
 
                 stockRows.Add(stockRow);
                 panelStocks.Controls.Add(stockRow);
@@ -74,6 +79,7 @@ namespace InvestmentChecker2
                 CurrencyExchange ce = App.currentCurrencyExchanges[i];
                 CurrencyExchangeRow cer = new CurrencyExchangeRow(ce);
                 cer.Top = i * STOCK_ROW_HEIGHT;
+                cer.BackColor = i % 2 == 0 ? evenRow : oddRow;
 
                 currencyExchangeRows.Add(cer);
                 panelCurrencyExhanges.Controls.Add(cer);
@@ -100,6 +106,7 @@ namespace InvestmentChecker2
             App.ReadCurrencyExchangesForProfile();
             DisplayCurrentStocks();
             DisplayCurrentCurrencyExchanges();
+            App.GetCurrentPricesForCurrentStocks();
         }
 
         // Open new windows

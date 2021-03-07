@@ -26,13 +26,13 @@ namespace InvestmentChecker2
             InitializeComponent();
             this.stocks = stocks;
             this.currencyExchanges = currencyExchanges;
+            labelChange.Text = $"Change (in {App.currentProfileMainCurrency})";
 
             GetCurrencyPrices();
             DisplaySummaryRows();
 
             // Overall
             DisplayOverall();
-
         }
 
         void GetCurrencyPrices()
@@ -51,7 +51,8 @@ namespace InvestmentChecker2
                 try
                 {
                     string ticker = $"{currency}{App.currentProfileMainCurrency}=X";
-                    double currentPrice = double.Parse(App.RunScript(App.GET_STOCK_PRICE_SCRIPT_PATH, ticker)[1], CultureInfo.InvariantCulture);
+
+                    double currentPrice = double.Parse(App.RunScript(App.GET_STOCK_PRICE_SCRIPT_PATH, ticker), CultureInfo.InvariantCulture);
                     currenciesCurrentPrice.Add(currency, currentPrice);
                 }
                 catch (Exception)
@@ -71,8 +72,6 @@ namespace InvestmentChecker2
         {
             foreach (KeyValuePair<string, double> currency in currenciesBuyingPrice)
             {
-                
-
                 string currencyName = currency.Key;
                 double currencyBuyingPrice = currency.Value;
                 double currencyCurrentPrice = currenciesCurrentPrice[currencyName];
@@ -80,17 +79,21 @@ namespace InvestmentChecker2
                 double initialCapitalValue = stocks.Where(x => x.currency == currencyName).Sum(x => x.BuyingMarketValue);
                 double currentCapitalValue = stocks.Where(x => x.currency == currencyName).Sum(x => x.CurrentMarketValue);
                 double change = currentCapitalValue - initialCapitalValue;
+                
+                if (initialCapitalValue != 0)
+                {
+                    SummaryRow sr = new SummaryRow(currencyName, initialCapitalValue, currentCapitalValue);
+                    sr.Top = panelStockSummaries.Controls.Count * 65;
+                    panelStockSummaries.Controls.Add(sr);
 
-                SummaryRow sr = new SummaryRow(currencyName, initialCapitalValue, currentCapitalValue);
-                sr.Top = panelStockSummaries.Controls.Count * 65;
-                panelStockSummaries.Controls.Add(sr);
+                    // Gain/loss from stock
+                
+                    double gainFromStocksInMainCurr = change * currencyBuyingPrice;
 
-                // Gain/loss from stock
-                double gainFromStocksInMainCurr = change * currencyBuyingPrice;
-
-                GainsAndLossesRow galrs = new GainsAndLossesRow(currencyName, gainFromStocksInMainCurr);
-                galrs.Top = panelGainsAndLosses.Controls.Count * 65;
-                panelGainsAndLosses.Controls.Add(galrs);
+                    GainsAndLossesRow galrs = new GainsAndLossesRow(currencyName, gainFromStocksInMainCurr);
+                    galrs.Top = panelGainsAndLosses.Controls.Count * 65;
+                    panelGainsAndLosses.Controls.Add(galrs);
+                }
 
                 // Gain/loss from currency
                 if (currencyName != App.currentProfileMainCurrency)
