@@ -76,7 +76,15 @@ namespace InvestmentChecker2
 
         public string[] GetOutputArray()
         {
-            string[] output = { id.ToString(), ticker, name, quantity.ToString(), buyingPrice.ToString(), dateBought.ToShortDateString().ToString() };
+            string[] output = { 
+                id.ToString(), 
+                ticker, 
+                name, 
+                quantity.ToString(), 
+                buyingPrice.ToString(),
+                currency,
+                dateBought.ToShortDateString().ToString() 
+            };
             return output;
         }
     }

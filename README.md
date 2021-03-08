@@ -1,31 +1,30 @@
 # Investment Checker 2
 Link to the previous version of Investment Checker (written in Python): [Investment Checker](https://github.com/itsmeeandrew/InvestmentChecker)
 
-# TODOs
-- Fix design
-  - Better column spacing
-  - Global styles in code
-  - Smaller font size on different windows
-  - Scroll bars
-  - Responsive design
-- Support for currencies
+# Future plans
+- Profile
+  - Add profile window -> choose type: standard or observer
+  - Class for DRY code? (updateCSV, readCSV ...)
+  - Delete profile
+  - Save current state to history
+- Summary window
+  - For the whole profile
+    - Summarizing based on unique labels
+    - Add more statistics and charts
+  - For each stock describing
+    - Weight in profile
+    - Growth / number of days having it
+  - Combining all the profiles
 - Settings window
-  - Select which columns to display
-  - Auto-refresh prices every X minutes
+  - Select which columns to show
+  - Auto-refresh every X seconds
   - Python location -> auto-search
-  - Color themes
-  - Font-size?
-- Select main
-- Add profile type for following stocks
-- Summary windows on each stock
-- Summary window on profile
-- Summary window including all profiles
-- Main currency to convert everything
-- Send email when stock price hits a value
-
-- Profile class for DRY code (updateCSV, readCSV ...)
-- Better form validations
-- ShowError form: responsive design!
-- Delete profile
-- Ticker uppercase
-- Címke alapján megjeleníteni summaryben az egyes win loset forintban
+  - Send email when stock price hits value
+- Stocks
+  - Unique labels for each stocks (Tech, Renewable energy, Finance etc..)
+- Design
+  - ShowError form fix
+  - Tickers on multi-line fix
+  - Calculate panel heights from code
+- Miscellaneous
+  - Better form validations

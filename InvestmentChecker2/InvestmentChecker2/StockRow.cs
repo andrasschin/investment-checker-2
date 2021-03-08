@@ -30,11 +30,11 @@ namespace InvestmentChecker2
             get { return currentPrice; }
             set { 
                 currentPrice = value;
-                labelCurrentPrice.Text = Math.Round(currentPrice, fracDigits).ToString();
-                labelPriceDifference.Text = Math.Round(stock.PriceDifference, fracDigits).ToString();
-                labelBuyingMarketValue.Text = stock.BuyingMarketValue.ToString();
-                labelCurrentMarketValue.Text = Math.Round(stock.CurrentMarketValue, fracDigits).ToString();
-                labelMarketValueDifference.Text = Math.Round(stock.MarketValueDifference, fracDigits).ToString();
+                labelCurrentPrice.Text = Math.Round(currentPrice, fracDigits).ToString(App.NUMBER_DISPLAY_FORMAT);
+                labelPriceDifference.Text = Math.Round(stock.PriceDifference, fracDigits).ToString(App.NUMBER_DISPLAY_FORMAT);
+                labelBuyingMarketValue.Text = stock.BuyingMarketValue.ToString(App.NUMBER_DISPLAY_FORMAT);
+                labelCurrentMarketValue.Text = Math.Round(stock.CurrentMarketValue, fracDigits).ToString(App.NUMBER_DISPLAY_FORMAT);
+                labelMarketValueDifference.Text = Math.Round(stock.MarketValueDifference, fracDigits).ToString(App.NUMBER_DISPLAY_FORMAT);
                 labelChangePercent.Text = Math.Round(stock.ChangePercent, fracDigits).ToString() + "%";
 
                 if (stock.PriceDifference > 0)
@@ -61,8 +61,8 @@ namespace InvestmentChecker2
 
             labelTicker.Text = stock.ticker;
             labelName.Text = stock.name;
-            labelQuantity.Text = stock.quantity.ToString();
-            labelBuyingPrice.Text = stock.buyingPrice.ToString();
+            labelQuantity.Text = stock.quantity.ToString(App.NUMBER_DISPLAY_FORMAT);
+            labelBuyingPrice.Text = stock.buyingPrice.ToString(App.NUMBER_DISPLAY_FORMAT);
             labelCurrency.Text = stock.currency;
             labelDateBought.Text = stock.dateBought.ToShortDateString().ToString();
         }

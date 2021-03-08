@@ -20,9 +20,9 @@ namespace InvestmentChecker2
 
             labelCurrencyFrom.Text = ce.currencyFrom;
             labelCurrencyTo.Text = ce.currencyTo;
-            labelQuantity.Text = ce.quantity.ToString();
-            labelBuyingPrice.Text = ce.buyingPrice.ToString();
-            labelBuyingMarketValue.Text = ce.BuyingMarketValue.ToString();
+            labelQuantity.Text = ce.quantity.ToString(App.NUMBER_DISPLAY_FORMAT);
+            labelBuyingPrice.Text = ce.buyingPrice.ToString(App.NUMBER_DISPLAY_FORMAT);
+            labelBuyingMarketValue.Text = ce.BuyingMarketValue.ToString(App.NUMBER_DISPLAY_FORMAT);
             labelDateBought.Text = ce.dateBought.ToShortDateString();
         }
 

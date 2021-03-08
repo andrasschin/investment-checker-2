@@ -125,12 +125,12 @@ namespace InvestmentChecker2
             // 
             // panelStocks
             // 
-            this.panelStocks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelStocks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelStocks.AutoScroll = true;
             this.panelStocks.Location = new System.Drawing.Point(24, 174);
             this.panelStocks.Name = "panelStocks";
-            this.panelStocks.Size = new System.Drawing.Size(1740, 424);
+            this.panelStocks.Size = new System.Drawing.Size(1758, 424);
             this.panelStocks.TabIndex = 4;
             // 
             // panelCurrencyExhanges
@@ -140,7 +140,7 @@ namespace InvestmentChecker2
             this.panelCurrencyExhanges.AutoScroll = true;
             this.panelCurrencyExhanges.Location = new System.Drawing.Point(24, 700);
             this.panelCurrencyExhanges.Name = "panelCurrencyExhanges";
-            this.panelCurrencyExhanges.Size = new System.Drawing.Size(920, 173);
+            this.panelCurrencyExhanges.Size = new System.Drawing.Size(943, 173);
             this.panelCurrencyExhanges.TabIndex = 5;
             // 
             // panelStockColumns
@@ -159,7 +159,7 @@ namespace InvestmentChecker2
             this.panelStockColumns.Controls.Add(this.btnSHeaderTicker);
             this.panelStockColumns.Location = new System.Drawing.Point(24, 102);
             this.panelStockColumns.Name = "panelStockColumns";
-            this.panelStockColumns.Size = new System.Drawing.Size(1740, 66);
+            this.panelStockColumns.Size = new System.Drawing.Size(1758, 66);
             this.panelStockColumns.TabIndex = 6;
             // 
             // btnSHeaderCurrency
@@ -356,8 +356,6 @@ namespace InvestmentChecker2
             // 
             // panelCurrencyExchangeColumns
             // 
-            this.panelCurrencyExchangeColumns.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderCurrencyTo);
             this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderBuyingMarketValue);
             this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderQuantity);
@@ -366,7 +364,7 @@ namespace InvestmentChecker2
             this.panelCurrencyExchangeColumns.Controls.Add(this.buttonCEHeaderCurrencyFrom);
             this.panelCurrencyExchangeColumns.Location = new System.Drawing.Point(24, 628);
             this.panelCurrencyExchangeColumns.Name = "panelCurrencyExchangeColumns";
-            this.panelCurrencyExchangeColumns.Size = new System.Drawing.Size(920, 66);
+            this.panelCurrencyExchangeColumns.Size = new System.Drawing.Size(943, 66);
             this.panelCurrencyExchangeColumns.TabIndex = 7;
             // 
             // btnCEHeaderCurrencyTo
@@ -505,7 +503,7 @@ namespace InvestmentChecker2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1786, 922);
+            this.ClientSize = new System.Drawing.Size(1804, 922);
             this.Controls.Add(this.btnProfileSummary);
             this.Controls.Add(this.buttonAddCurrency);
             this.Controls.Add(this.panelCurrencyExchangeColumns);

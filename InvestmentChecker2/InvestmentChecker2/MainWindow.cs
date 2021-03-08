@@ -29,7 +29,7 @@ namespace InvestmentChecker2
         {
             InitializeComponent();
             App.LoadProfileNames();
-            comboBoxSelectProfile.DataSource = App.profileNames;  
+            comboBoxSelectProfile.DataSource = App.profileNames;
         }
 
         private void MainWindowLoad(object sender, EventArgs e)
