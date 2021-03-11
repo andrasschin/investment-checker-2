@@ -35,12 +35,11 @@ namespace InvestmentChecker2
             // 
             // labelErrorMessage
             // 
-            this.labelErrorMessage.AutoSize = true;
             this.labelErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelErrorMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelErrorMessage.Location = new System.Drawing.Point(203, 50);
+            this.labelErrorMessage.Location = new System.Drawing.Point(12, 9);
             this.labelErrorMessage.Name = "labelErrorMessage";
-            this.labelErrorMessage.Size = new System.Drawing.Size(70, 26);
+            this.labelErrorMessage.Size = new System.Drawing.Size(456, 111);
             this.labelErrorMessage.TabIndex = 0;
             this.labelErrorMessage.Text = "label1";
             this.labelErrorMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,7 +55,7 @@ namespace InvestmentChecker2
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnOk.Location = new System.Drawing.Point(198, 123);
+            this.btnOk.Location = new System.Drawing.Point(194, 123);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(85, 50);
             this.btnOk.TabIndex = 11;
@@ -77,7 +76,6 @@ namespace InvestmentChecker2
             this.Text = "Error";
             this.TopMost = true;
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -15,6 +15,7 @@ namespace InvestmentChecker2
     class App
     {
         // GLOBAL CONSTANTS
+        
         // Display
         public static int NUMBER_OF_FRAC_DIGITS = 2;
         public static string NUMBER_DISPLAY_FORMAT = "#,##0.##";
@@ -38,16 +39,17 @@ namespace InvestmentChecker2
             return $"{PROFILES_FOLDER_PATH}{currentProfile}/currency-exchanges";
         }
 
-        // Files
+        // File information
         public static char CSV_DELIMITER = ';';
         public static char PYTHON_OUTPUT_DELIMITER = ';';
         public static int NEXT_STOCK_ID;
         public static int NEXT_CURRENCY_EXCHANGE_ID;
-
-        // Python
-        static string pyexe = @"C:\Users\Andrew\AppData\Local\Programs\Python\Python38-32\python.exe";
-        public static string GET_STOCK_INFO_SCRIPT_PATH = "../../../Scripts/get_stock_info.py";
-        public static string GET_STOCK_PRICE_SCRIPT_PATH = "../../../Scripts/get_stock_price.py";
+        
+        // File paths
+        static string pyexe = "C:/Users/Andrew/AppData/Local/Programs/Python/Python38-32/python.exe";
+        public static string STOCK_INFO_SCRIPT_PATH = "../../../Scripts/get_stock_info.py";
+        public static string STOCK_PRICE_SCRIPT_PATH = "../../../Scripts/get_stock_price.py";
+        public static string SETTINGS_PATH = "./settings/settings.txt";
 
 
         // GLOBAL VARIABLES
@@ -62,6 +64,9 @@ namespace InvestmentChecker2
         public static List<CurrencyExchange> currentCurrencyExchanges = new List<CurrencyExchange>();
         public static bool stocksToBeDeleted = false;
         public static bool currencyExchangeToBeDeleted = false;
+
+        // Settings
+        public static Settings settings;
 
         // FUNCTIONS
 
@@ -136,7 +141,7 @@ namespace InvestmentChecker2
         {
             // Are there order issues?
             string[] tickers = currentStocks.Select(stock => stock.ticker).ToArray();
-            string[] res = RunScript(GET_STOCK_PRICE_SCRIPT_PATH, string.Join(" ", tickers)).Split();
+            string[] res = RunScript(STOCK_PRICE_SCRIPT_PATH, string.Join(" ", tickers)).Split();
             for (int i = 0; i < tickers.Length; i++)
             {
                 currentStocks[i].CurrentPrice = double.Parse(res[i], CultureInfo.InvariantCulture);
@@ -178,6 +183,23 @@ namespace InvestmentChecker2
             }
         }
 
+        public static void ReadSettings()
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            using (StreamReader sr = new StreamReader(SETTINGS_PATH))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string[] option = sr.ReadLine().Split('=');
+                    string key = option[0];
+                    string value = option[1];
+                    dict.Add(key, value);
+                }
+            }
+            Settings newSettings = new Settings(dict);
+            settings = newSettings;
+        }
+
         // Rewrites the current profile's stocks.csv, exluding the stocks which were scheduled for deletion
         public static void UpdateStocksCSV()
         {
@@ -202,6 +224,32 @@ namespace InvestmentChecker2
             }
         }
 
+        public static void UpdateSettings()
+        {
+            using (StreamWriter sw = new StreamWriter(SETTINGS_PATH))
+            {
+                foreach (KeyValuePair<string, string> setting in settings.settings)
+                {
+                    sw.WriteLine($"{setting.Key}={setting.Value}");
+                }
+            }
+        }
+
+        public static void CreateDefaultSettings()
+        {
+            Directory.CreateDirectory("./settings");
+            File.Create(SETTINGS_PATH).Close();
+
+            using (StreamWriter sw = new StreamWriter(SETTINGS_PATH))
+            {
+                sw.Write(
+                    "autoUpdate=False\n" +
+                    "autoUpdateInterval=0\n" +
+                    "pythonExeFullPath="
+                    );
+            }
+        }
+
         public static string CreateCSVLine(string[] arr)
         {
             string line = "";
@@ -213,10 +261,12 @@ namespace InvestmentChecker2
 
             return line;
         }
+
         public static double GetPercent(double initial, double current)
         {
             return ((current / initial) - 1) * 100;
         }
+
 
         // Shows the error window with an error message as parameter
         public static void ShowError(string errorMessage)
@@ -243,6 +293,17 @@ namespace InvestmentChecker2
                 }
             }
             return result;
+        }
+
+        public static void Log(string callerFunction, string logText)
+        {
+            string today = DateTime.Today.ToShortDateString();
+            string filename = $"log_{callerFunction}_{today}";
+            File.Create($"logs/{filename}.txt").Close();
+            using (StreamWriter sw = new StreamWriter($"logs/{filename}.txt"))
+            {
+                sw.Write(logText);
+            }
         }
     }
 }

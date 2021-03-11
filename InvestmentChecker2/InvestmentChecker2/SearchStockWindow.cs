@@ -77,7 +77,7 @@ namespace InvestmentChecker2
         private void SearchStock(object sender, EventArgs e)
         {
             string ticker = textInputTicker.Text.ToUpper();
-            string[] result = App.RunScript(App.GET_STOCK_INFO_SCRIPT_PATH, ticker).Split(';');
+            string[] result = App.RunScript(App.STOCK_INFO_SCRIPT_PATH, ticker).Split(';');
 
             // Check if we have a valid stock
             if (result[2] == "-1")

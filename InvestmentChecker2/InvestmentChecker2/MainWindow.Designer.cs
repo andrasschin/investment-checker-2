@@ -29,6 +29,7 @@ namespace InvestmentChecker2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAddProfile = new System.Windows.Forms.Button();
             this.comboBoxSelectProfile = new System.Windows.Forms.ComboBox();
             this.btnAddStock = new System.Windows.Forms.Button();
@@ -57,6 +58,12 @@ namespace InvestmentChecker2
             this.buttonCEHeaderCurrencyFrom = new System.Windows.Forms.Button();
             this.buttonAddCurrency = new System.Windows.Forms.Button();
             this.btnProfileSummary = new System.Windows.Forms.Button();
+            this.autoUpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.labelAutoUpdate = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelStockColumns.SuspendLayout();
             this.panelCurrencyExchangeColumns.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +73,7 @@ namespace InvestmentChecker2
             this.btnAddProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnAddProfile.FlatAppearance.BorderSize = 0;
             this.btnAddProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddProfile.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnAddProfile.Location = new System.Drawing.Point(216, 27);
             this.btnAddProfile.Name = "btnAddProfile";
@@ -87,7 +94,7 @@ namespace InvestmentChecker2
             this.comboBoxSelectProfile.Name = "comboBoxSelectProfile";
             this.comboBoxSelectProfile.Size = new System.Drawing.Size(183, 39);
             this.comboBoxSelectProfile.TabIndex = 1;
-            this.comboBoxSelectProfile.SelectedValueChanged += new System.EventHandler(this.onProfileChange);
+            this.comboBoxSelectProfile.SelectedValueChanged += new System.EventHandler(this.OnProfileChange);
             // 
             // btnAddStock
             // 
@@ -497,6 +504,70 @@ namespace InvestmentChecker2
             this.btnProfileSummary.UseVisualStyleBackColor = false;
             this.btnProfileSummary.Click += new System.EventHandler(this.OpenProfileSummaryWindow);
             // 
+            // autoUpdateTimer
+            // 
+            this.autoUpdateTimer.Tick += new System.EventHandler(this.UpdateCurrentPrices);
+            // 
+            // labelAutoUpdate
+            // 
+            this.labelAutoUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAutoUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelAutoUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.labelAutoUpdate.Location = new System.Drawing.Point(952, 27);
+            this.labelAutoUpdate.Name = "labelAutoUpdate";
+            this.labelAutoUpdate.Size = new System.Drawing.Size(590, 48);
+            this.labelAutoUpdate.TabIndex = 19;
+            this.labelAutoUpdate.Text = "Auto update is ";
+            this.labelAutoUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.label1.Location = new System.Drawing.Point(1146, 665);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 29);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Session change:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.label2.Location = new System.Drawing.Point(1146, 698);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 29);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Last change:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.label3.Location = new System.Drawing.Point(1146, 731);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(197, 29);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Most gain:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.label4.Location = new System.Drawing.Point(1146, 764);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(197, 29);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Most loss:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +575,11 @@ namespace InvestmentChecker2
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1804, 922);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelAutoUpdate);
             this.Controls.Add(this.btnProfileSummary);
             this.Controls.Add(this.buttonAddCurrency);
             this.Controls.Add(this.panelCurrencyExchangeColumns);
@@ -517,7 +593,6 @@ namespace InvestmentChecker2
             this.Name = "MainWindow";
             this.Text = "Investment Checker 2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindowClose);
-            this.Load += new System.EventHandler(this.MainWindowLoad);
             this.panelStockColumns.ResumeLayout(false);
             this.panelCurrencyExchangeColumns.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -554,6 +629,12 @@ namespace InvestmentChecker2
         private System.Windows.Forms.Button buttonAddCurrency;
         private System.Windows.Forms.Button btnCEHeaderCurrencyTo;
         private System.Windows.Forms.Button btnProfileSummary;
+        private System.Windows.Forms.Timer autoUpdateTimer;
+        private System.Windows.Forms.Label labelAutoUpdate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

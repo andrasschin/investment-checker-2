@@ -52,7 +52,7 @@ namespace InvestmentChecker2
                 {
                     string ticker = $"{currency}{App.currentProfileMainCurrency}=X";
 
-                    double currentPrice = double.Parse(App.RunScript(App.GET_STOCK_PRICE_SCRIPT_PATH, ticker), CultureInfo.InvariantCulture);
+                    double currentPrice = double.Parse(App.RunScript(App.STOCK_PRICE_SCRIPT_PATH, ticker), CultureInfo.InvariantCulture);
                     currenciesCurrentPrice.Add(currency, currentPrice);
                 }
                 catch (Exception)

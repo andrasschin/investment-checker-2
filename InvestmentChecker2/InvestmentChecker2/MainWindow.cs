@@ -21,6 +21,11 @@ namespace InvestmentChecker2
         Color oddRow = Color.FromArgb(255, 24, 24, 24);
         Color evenRow = Color.FromArgb(255, 32, 32, 32);
 
+        string autoUpdateBaseText = "Auto update is ";
+        Color autoUpdateUpdating = Color.FromArgb(255, 0, 167, 255);
+        Color autoUpdateOn = Color.FromArgb(255, 20, 195, 120);
+        Color autoUpdateOff = Color.FromArgb(255, 165, 36, 61);
+
         // StockRow controls
         List<StockRow> stockRows = new List<StockRow>();
         List<CurrencyExchangeRow> currencyExchangeRows = new List<CurrencyExchangeRow>();
@@ -28,13 +33,25 @@ namespace InvestmentChecker2
         public MainWindow()
         {
             InitializeComponent();
+
+            // Read settings
+            if (File.Exists(App.SETTINGS_PATH))
+            {
+                App.ReadSettings();
+            } else
+            {
+                App.CreateDefaultSettings();
+                App.ReadSettings();
+            }
+
+            
+
+            // Load profiles
             App.LoadProfileNames();
             comboBoxSelectProfile.DataSource = App.profileNames;
-        }
 
-        private void MainWindowLoad(object sender, EventArgs e)
-        {
-            
+            // Icons
+            btnAddProfile.Text = "\uE710";
         }
 
         private void DisplayCurrentStocks()
@@ -67,6 +84,7 @@ namespace InvestmentChecker2
             }
             App.NEXT_STOCK_ID++;
         }
+
         private void DisplayCurrentCurrencyExchanges()
         {
             foreach (CurrencyExchangeRow currencyExchangeRow in currencyExchangeRows)
@@ -89,7 +107,30 @@ namespace InvestmentChecker2
             App.NEXT_CURRENCY_EXCHANGE_ID++;
         }
 
-        private void onProfileChange(object sender, EventArgs e)
+        public void SetAutoUpdateTimer()
+        {
+            autoUpdateTimer.Stop();
+            
+            if (App.settings.AutoUpdate)
+            {
+                labelAutoUpdate.Text = autoUpdateBaseText + $"ON (updating every {App.settings.AutoUpdateInterval} seconds)";
+                labelAutoUpdate.ForeColor = autoUpdateOn;
+                autoUpdateTimer.Start();
+                autoUpdateTimer.Interval = App.settings.AutoUpdateInterval * 1000;
+            }
+            else
+            {
+                labelAutoUpdate.Text = autoUpdateBaseText + "OFF";
+                labelAutoUpdate.ForeColor = autoUpdateOff;
+            }
+        }
+
+        private void UpdateCurrentPrices(object sender, EventArgs e)
+        {
+            App.GetCurrentPricesForCurrentStocks();
+        }
+
+        private void OnProfileChange(object sender, EventArgs e)
         {
             if (App.currentProfile != null && App.stocksToBeDeleted)
             {
@@ -107,6 +148,8 @@ namespace InvestmentChecker2
             DisplayCurrentStocks();
             DisplayCurrentCurrencyExchanges();
             App.GetCurrentPricesForCurrentStocks();
+
+            SetAutoUpdateTimer();
         }
 
         // Open new windows
@@ -125,7 +168,11 @@ namespace InvestmentChecker2
         private void OpenSettingsWindow(object sender, EventArgs e)
         {
             SettingsWindow window = new SettingsWindow();
-            window.Show();
+            DialogResult dr = window.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                SetAutoUpdateTimer();
+            }
         }
 
         // Occurs when the form is being closed
@@ -153,5 +200,7 @@ namespace InvestmentChecker2
             ProfileSummaryWindow window = new ProfileSummaryWindow(App.currentStocks, App.currentCurrencyExchanges);
             window.Show();
         }
+
+        
     }
 }
