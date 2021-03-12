@@ -65,6 +65,9 @@ namespace InvestmentChecker2
             labelBuyingPrice.Text = stock.buyingPrice.ToString(App.NUMBER_DISPLAY_FORMAT);
             labelCurrency.Text = stock.currency;
             labelDateBought.Text = stock.dateBought.ToShortDateString().ToString();
+
+            // Icons
+            btnRemove.Text = "\uE711";
         }
         private void RemoveStock(object sender, EventArgs e)
         {

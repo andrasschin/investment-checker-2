@@ -49,6 +49,7 @@ namespace InvestmentChecker2
         static string pyexe = "C:/Users/Andrew/AppData/Local/Programs/Python/Python38-32/python.exe";
         public static string STOCK_INFO_SCRIPT_PATH = "../../../Scripts/get_stock_info.py";
         public static string STOCK_PRICE_SCRIPT_PATH = "../../../Scripts/get_stock_price.py";
+        public static string PYTHON_EXE_TEST_SCRIPT_PATH = "../../../Scripts/tests/python_test.py";
         public static string SETTINGS_PATH = "./settings/settings.txt";
 
 
@@ -280,19 +281,27 @@ namespace InvestmentChecker2
             string result = "";
 
             ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = pyexe;
+            start.FileName = settings.PythonExeFullPath;
             start.Arguments = $"{scriptPath} {args}";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = true;
-            using (Process process = Process.Start(start))
+            try
             {
-                using (StreamReader reader = process.StandardOutput)
+                using (Process process = Process.Start(start))
                 {
-                    result = reader.ReadLine();
+                    using (StreamReader reader = process.StandardOutput)
+                    {
+                        result = reader.ReadLine();
+                    }
                 }
+                return result;
             }
-            return result;
+            catch
+            {
+                App.ShowError("Invalid python executable.");
+                return "";
+            }
         }
 
         public static void Log(string callerFunction, string logText)

@@ -59,6 +59,12 @@
     <Compile Include="AddProfileWindow.Designer.cs">
       <DependentUpon>AddProfileWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPythonExeFullPathWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPythonExeFullPathWindow.Designer.cs">
+      <DependentUpon>AddPythonExeFullPathWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStockWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddProfileWindow.resx">
       <DependentUpon>AddProfileWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPythonExeFullPathWindow.resx">
+      <DependentUpon>AddPythonExeFullPathWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddStockWindow.resx">
       <DependentUpon>AddStockWindow.cs</DependentUpon>

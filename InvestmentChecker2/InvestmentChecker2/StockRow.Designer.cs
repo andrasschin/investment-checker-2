@@ -50,7 +50,7 @@ namespace InvestmentChecker2
             this.btnRemove.BackColor = System.Drawing.Color.Transparent;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemove.Font = new System.Drawing.Font("Segoe MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.Maroon;
             this.btnRemove.Location = new System.Drawing.Point(1680, 15);
             this.btnRemove.Name = "btnRemove";

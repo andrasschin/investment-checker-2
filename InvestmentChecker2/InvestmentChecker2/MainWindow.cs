@@ -44,7 +44,16 @@ namespace InvestmentChecker2
                 App.ReadSettings();
             }
 
-            
+            // Check if python is available
+            if (string.IsNullOrEmpty(App.settings.PythonExeFullPath))
+            {
+                AddPythonExeFullPathWindow window = new AddPythonExeFullPathWindow();
+                DialogResult dr = window.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+            }
 
             // Load profiles
             App.LoadProfileNames();
@@ -201,6 +210,9 @@ namespace InvestmentChecker2
             window.Show();
         }
 
-        
+        private void ReorderStockRows(object sender, EventArgs e)
+        {
+            // TBD...
+        }
     }
 }

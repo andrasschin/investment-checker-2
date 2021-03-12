@@ -17,11 +17,12 @@ Link to the previous version of Investment Checker (written in Python): [Investm
   - Combining all the profiles
 - Settings window
   - Select which columns to show
-  - Auto-refresh every X seconds
+  - Auto-refresh every X seconds ✔
   - Python location -> auto-search
   - Send email when stock price hits value
 - Stocks
   - Unique labels for each stocks (Tech, Renewable energy, Finance etc..)
+  - Order by clicking on column name
 - Design
   - ShowError form fix
   - Tickers on multi-line fix
