@@ -198,7 +198,7 @@ namespace InvestmentChecker2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(716, 436);
+            this.ClientSize = new System.Drawing.Size(721, 436);
             this.Controls.Add(this.comboBoxSelectCurrencyTo);
             this.Controls.Add(this.comboBoxSelectCurrencyFrom);
             this.Controls.Add(this.btnSave);

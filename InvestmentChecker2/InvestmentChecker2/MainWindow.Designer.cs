@@ -128,7 +128,8 @@ namespace InvestmentChecker2
             // 
             // panelStocks
             // 
-            this.panelStocks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelStocks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelStocks.AutoScroll = true;
             this.panelStocks.Location = new System.Drawing.Point(24, 174);
@@ -138,12 +139,11 @@ namespace InvestmentChecker2
             // 
             // panelCurrencyExhanges
             // 
-            this.panelCurrencyExhanges.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCurrencyExhanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panelCurrencyExhanges.AutoScroll = true;
             this.panelCurrencyExhanges.Location = new System.Drawing.Point(24, 700);
             this.panelCurrencyExhanges.Name = "panelCurrencyExhanges";
-            this.panelCurrencyExhanges.Size = new System.Drawing.Size(943, 173);
+            this.panelCurrencyExhanges.Size = new System.Drawing.Size(943, 247);
             this.panelCurrencyExhanges.TabIndex = 5;
             // 
             // panelStockColumns
@@ -197,6 +197,7 @@ namespace InvestmentChecker2
             this.btnSHeaderPriceDifference.TabIndex = 14;
             this.btnSHeaderPriceDifference.Text = "Price Difference";
             this.btnSHeaderPriceDifference.UseVisualStyleBackColor = false;
+            this.btnSHeaderPriceDifference.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderBuyingMarkeValue
             // 
@@ -211,8 +212,9 @@ namespace InvestmentChecker2
             this.btnSHeaderBuyingMarkeValue.Name = "btnSHeaderBuyingMarkeValue";
             this.btnSHeaderBuyingMarkeValue.Size = new System.Drawing.Size(145, 60);
             this.btnSHeaderBuyingMarkeValue.TabIndex = 10;
-            this.btnSHeaderBuyingMarkeValue.Text = "Buying market value";
+            this.btnSHeaderBuyingMarkeValue.Text = "Buying Market Value";
             this.btnSHeaderBuyingMarkeValue.UseVisualStyleBackColor = false;
+            this.btnSHeaderBuyingMarkeValue.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderQuantity
             // 
@@ -229,6 +231,7 @@ namespace InvestmentChecker2
             this.btnSHeaderQuantity.TabIndex = 17;
             this.btnSHeaderQuantity.Text = "Quantity";
             this.btnSHeaderQuantity.UseVisualStyleBackColor = false;
+            this.btnSHeaderQuantity.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderDateBought
             // 
@@ -245,6 +248,7 @@ namespace InvestmentChecker2
             this.btnSHeaderDateBought.TabIndex = 16;
             this.btnSHeaderDateBought.Text = "Date Bought";
             this.btnSHeaderDateBought.UseVisualStyleBackColor = false;
+            this.btnSHeaderDateBought.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderChangePercent
             // 
@@ -261,6 +265,7 @@ namespace InvestmentChecker2
             this.btnSHeaderChangePercent.TabIndex = 15;
             this.btnSHeaderChangePercent.Text = "Change (%)";
             this.btnSHeaderChangePercent.UseVisualStyleBackColor = false;
+            this.btnSHeaderChangePercent.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderMarketValueDifference
             // 
@@ -277,6 +282,7 @@ namespace InvestmentChecker2
             this.btnSHeaderMarketValueDifference.TabIndex = 13;
             this.btnSHeaderMarketValueDifference.Text = "M. V. Difference";
             this.btnSHeaderMarketValueDifference.UseVisualStyleBackColor = false;
+            this.btnSHeaderMarketValueDifference.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderCurrentMarketValue
             // 
@@ -291,8 +297,9 @@ namespace InvestmentChecker2
             this.btnSHeaderCurrentMarketValue.Name = "btnSHeaderCurrentMarketValue";
             this.btnSHeaderCurrentMarketValue.Size = new System.Drawing.Size(145, 60);
             this.btnSHeaderCurrentMarketValue.TabIndex = 12;
-            this.btnSHeaderCurrentMarketValue.Text = "Current market value";
+            this.btnSHeaderCurrentMarketValue.Text = "Current Market Value";
             this.btnSHeaderCurrentMarketValue.UseVisualStyleBackColor = false;
+            this.btnSHeaderCurrentMarketValue.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderCurrentPrice
             // 
@@ -307,8 +314,9 @@ namespace InvestmentChecker2
             this.btnSHeaderCurrentPrice.Name = "btnSHeaderCurrentPrice";
             this.btnSHeaderCurrentPrice.Size = new System.Drawing.Size(120, 60);
             this.btnSHeaderCurrentPrice.TabIndex = 11;
-            this.btnSHeaderCurrentPrice.Text = "Current price";
+            this.btnSHeaderCurrentPrice.Text = "Current Price";
             this.btnSHeaderCurrentPrice.UseVisualStyleBackColor = false;
+            this.btnSHeaderCurrentPrice.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderBuyingPrice
             // 
@@ -323,8 +331,9 @@ namespace InvestmentChecker2
             this.btnSHeaderBuyingPrice.Name = "btnSHeaderBuyingPrice";
             this.btnSHeaderBuyingPrice.Size = new System.Drawing.Size(120, 60);
             this.btnSHeaderBuyingPrice.TabIndex = 9;
-            this.btnSHeaderBuyingPrice.Text = "Buying price";
+            this.btnSHeaderBuyingPrice.Text = "Buying Price";
             this.btnSHeaderBuyingPrice.UseVisualStyleBackColor = false;
+            this.btnSHeaderBuyingPrice.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderName
             // 
@@ -341,6 +350,7 @@ namespace InvestmentChecker2
             this.btnSHeaderName.TabIndex = 8;
             this.btnSHeaderName.Text = "Name";
             this.btnSHeaderName.UseVisualStyleBackColor = false;
+            this.btnSHeaderName.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // btnSHeaderTicker
             // 
@@ -357,9 +367,11 @@ namespace InvestmentChecker2
             this.btnSHeaderTicker.TabIndex = 7;
             this.btnSHeaderTicker.Text = "Ticker";
             this.btnSHeaderTicker.UseVisualStyleBackColor = false;
+            this.btnSHeaderTicker.Click += new System.EventHandler(this.ReorderStockRows);
             // 
             // panelCurrencyExchangeColumns
             // 
+            this.panelCurrencyExchangeColumns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderCurrencyTo);
             this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderBuyingMarketValue);
             this.panelCurrencyExchangeColumns.Controls.Add(this.btnCEHeaderQuantity);
@@ -507,10 +519,9 @@ namespace InvestmentChecker2
             // 
             // labelAutoUpdate
             // 
-            this.labelAutoUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAutoUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelAutoUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.labelAutoUpdate.Location = new System.Drawing.Point(952, 27);
+            this.labelAutoUpdate.Location = new System.Drawing.Point(937, 23);
             this.labelAutoUpdate.Name = "labelAutoUpdate";
             this.labelAutoUpdate.Size = new System.Drawing.Size(590, 48);
             this.labelAutoUpdate.TabIndex = 19;
@@ -521,9 +532,9 @@ namespace InvestmentChecker2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1804, 922);
+            this.ClientSize = new System.Drawing.Size(1804, 977);
             this.Controls.Add(this.labelAutoUpdate);
             this.Controls.Add(this.btnProfileSummary);
             this.Controls.Add(this.buttonAddCurrency);

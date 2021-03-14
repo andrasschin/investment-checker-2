@@ -13,7 +13,7 @@ namespace InvestmentChecker2
     public partial class StockRow : UserControl
     {
         int fracDigits;
-        Stock stock;
+        public Stock stock;
 
         private double priceDifference;
 
